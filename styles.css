@@ -1,0 +1,297 @@
+*,
+*:after,
+*:before {
+    font-family:'Open Sans',sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/****** Header ******/
+
+.body__header {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    background-color: #404041;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.header__h1 {
+    color: #DD1972;
+    text-align: center;
+    font-size: 6em;
+    font-weight: 800;
+    border-bottom: solid 1px white;
+    width: 39%;
+    margin: 0 auto;
+}
+
+.header__span {
+font-weight: 300;
+}
+
+.header__h2 {
+position: relative;
+    margin: 0 auto;
+    color: white;
+    font-weight: 300;
+    font-size: 2.2em;
+    z-index: 1;
+    background-color: #404041;
+    bottom: 38px;
+    padding: 0 7px;
+}
+
+/******* Main left/right *******/
+
+.main__left {
+  width: 50%;
+  /* display: inline-block; */
+  background-color: #D0D2D3;
+  padding-top:20px;
+
+}
+
+.main__right {
+  background-color:#6E6E6E;
+  /* display: inline-block; */
+  width:50%;
+}
+
+/************** Main Left Section 1 **********/
+
+.main__left--section1 {
+    background-color: white;
+    border: solid 4px #F7F7F7;
+    height: 155px;
+    margin: 0 50px;
+}
+
+.section1--h3 {
+  color: #6E6E6E;
+  font-size: 1.5em;
+  padding: 10px 0px 2px 10px;
+}
+
+.section1__div--minRange {
+display: inline-block;
+padding-left: 10px;
+}
+
+.section1__label--min {
+
+      color: #6E6E6E;
+      font-size: 1.2em;
+    font-weight: 300;
+
+}
+
+.section1__input--min {
+  display: block;
+    height: 35px;
+    width:300px
+}
+
+.section1__div--maxRange {
+  display: inline-block;
+  padding-left: 10px;
+
+}
+
+.section1__label--max {
+    color: #6E6E6E;
+    font-weight: 300;
+    font-size: 1.2em;
+}
+
+.section1__input--max {
+   display: block;
+    height: 35px;
+    width: 300px;
+}
+
+.section1__left--btn {
+    height: 40px;
+    border-radius: 50px;
+    font-size: 1em;
+    font-weight: 700;
+    margin-left: 40px;
+    color: white;
+    width: 120px;
+    background-color: #6E6E6E;
+}
+
+/******* Main Left Section 2 *******/
+
+.main__left--section2 {
+  background-color: white;
+  border: solid 4px #F7F7F7;
+  height: 400px;
+  margin: 0 50px;
+  margin-top: 30px;
+}
+
+.section2__p {
+  color: #6E6E6E;
+  font-size: 1.6em;
+  padding: 10px;
+}
+
+.section2__span {
+  font-weight: 800;
+  text-decoration: underline;
+}
+
+.section2__h2 {
+  color: #6E6E6E;
+  font-weight: 800;
+  font-size: 1.8em;
+  padding: 10px;
+}
+
+.name1__div {
+  display: inline-block;
+}
+
+.guess1__div{
+  display: inline-block;
+}
+
+.section2__name1--label {
+  color: #6E6E6E;
+  display: block;
+  padding-left: 10px;
+
+}
+
+.section2__guess1--label {
+  display: block;
+ 
+}
+
+.section2__name1--input {
+  width: 300px;
+}
+
+.section2__guess1--input {
+  
+}
+
+.name2__div {
+  display: inline-block;
+}
+.section2__name2--label {
+  display: block;
+}
+
+.guess2__div {
+  display: inline-block;
+}
+
+.section2__guess2--input {
+  display: block;
+}
+
+.section2__btns {
+    height: 40px;
+    border-radius: 50px;
+    font-size: 1em;
+    font-weight: 700;
+    margin: 35px 25px 10px 25px;
+    color: white;
+    width: 140px;
+    background-color: #6E6E6E;
+}
+.section2__submit--btn {
+
+}
+
+.section2__reset--btn {
+
+}
+
+.section2__clear--btn {
+
+}
+
+/******* Main Left Section 3 *******/
+
+.main__left--section3 {
+  background-color: white;
+  border: solid 4px #F7F7F7;
+  height: 400px;
+  margin: 20px 50px 20px 50px;
+  text-align: center;
+}
+
+.section3__h3 {
+  margin: 5px 0px 0px 10px;
+  float: left;
+}
+.section3__div {
+  padding-top: 10%;
+
+}
+
+.section3__article1 {
+  display: inline-block;
+  text-align: center;
+  height: 50%;
+    width: 45%;
+    border-right: #404041 2px solid;
+
+}
+.article1__h4 {
+
+}
+
+.article1__p {
+
+}
+
+.article1__out {
+  display: block;
+  font-size: 5em;
+  font-weight: 800;
+  color: #DD1972;
+}
+
+.article1__span {
+
+}
+
+.article2__h4 {
+
+}
+
+.section3__article2 {
+  display: inline-block;
+  text-align: center;
+  height: 50%;
+    width: 45%;
+}
+
+.article2__p {
+
+}
+
+.article2__out {
+  color: #DD1972;
+  display: block;
+  font-weight: 800;
+  font-size: 5em;
+}
+
+.article2__span {
+  
+}
+
+/* Main Right */
+
