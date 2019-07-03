@@ -23,13 +23,16 @@ body {
     width: 100%;
 }
 
+/*h1 {
+  margin: auto;
+  border-bottom: 1px solid white;
+}*/
 .header__h1 {
     color: #DD1972;
     text-align: center;
     font-size: 6em;
     font-weight: 800;
     border-bottom: solid 1px white;
-    width: 39%;
     margin: 0 auto;
 }
 
@@ -49,6 +52,9 @@ position: relative;
     padding: 0 7px;
 }
 
+.div__main {
+display: flex;
+}
 /******* Main left/right *******/
 
 .main__left {
@@ -96,7 +102,7 @@ padding-left: 10px;
 .section1__input--min {
   display: block;
     height: 35px;
-    width:300px
+    width:200px
 }
 
 .section1__div--maxRange {
@@ -114,7 +120,7 @@ padding-left: 10px;
 .section1__input--max {
    display: block;
     height: 35px;
-    width: 300px;
+    width: 200px;
 }
 
 .section1__left--btn {
@@ -122,7 +128,7 @@ padding-left: 10px;
     border-radius: 50px;
     font-size: 1em;
     font-weight: 700;
-    margin-left: 40px;
+    margin-left: 25px;
     color: white;
     width: 120px;
     background-color: #6E6E6E;
