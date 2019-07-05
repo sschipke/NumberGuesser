@@ -15,16 +15,20 @@ nameOne.addEventListener('keyup',enableClearButton);
 
 
 function enableClearButton() {
-     var inputFields = [guessOne.value, guessTwo.value, nameOne.value];
+     var inputFields = [guessOne.value, guessTwo.value, nameOne.value, guessTwo.value];
      if (inputFields.includes('')) {
           clearBtn.disabled = true;
           clearBtn.classList.add('disabled');
+          resetBtn.disabled=true;
+          resetBtn.classList.add('disabled');
           console.log(inputFields);
           return;
      }
      else {
           clearBtn.disabled = false;
           clearBtn.classList.remove('disabled');
+          resetBtn.disabled = false;
+          resetBtn.classList.remove('disabled');
      }
 };
 
