@@ -7,11 +7,24 @@ var nameOne = document.querySelector('.section2__name1--input');
 var nameTwo = document.querySelector('.section2__name2--input');
 var resetBtn = document.querySelector('.section2__reset--btn');
 var submitGuess = document.querySelector('.section2__submit--btn');
+
+getRandomNumber();
 enableClearButton();
 
 guessOne.addEventListener('keyup',enableClearButton);
 guessTwo.addEventListener('keyup',enableClearButton);
 nameOne.addEventListener('keyup',enableClearButton);
+clearBtn.addEventListener('click', clearGame);
+clearBtn.addEventListener('click', enableClearButton);
+
+
+function getRandomNumber(min, max) {
+  var min = Math.ceil(min);
+  var max = Math.floor(max);
+  var randomNum = Math.floor((Math.random() * 100) + 1);
+  console.log(randomNum);
+  return randomNum;
+}
 
 
 function enableClearButton() {
@@ -31,5 +44,11 @@ function enableClearButton() {
           resetBtn.classList.remove('disabled');
      }
 };
+
+function clearGame() {
+     guessOne.value = null;
+     guessTwo.value = null;
+}
+
 
 
