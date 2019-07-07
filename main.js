@@ -16,6 +16,10 @@ var guess2Out = document.querySelector('.article2__out');
 
 getRandomNumber();
 enableClearButton();
+getRandomNumber();
+
+
+/**********Event Listeners*************/
 
 guessOne.addEventListener('keyup',enableClearButton);
 guessTwo.addEventListener('keyup',enableClearButton);
@@ -37,6 +41,15 @@ function getRandomNumber(min, max) {
   return randomNum;
 }
 
+/************Functions***************/
+
+function getRandomNumber(min, max) {
+  var min = Math.ceil(min);
+  var max = Math.floor(max);
+  var randomNum = Math.floor((Math.random() * 100) + 1);
+  console.log(randomNum);
+  return randomNum;
+}
 
 function enableClearButton() {
      var inputFields = [guessOne.value, guessTwo.value, nameOne.value, guessTwo.value];
@@ -76,7 +89,5 @@ function submit() {
      guess2Out.innerText = guessTwo.value;
 
 }
-
-
 
 
