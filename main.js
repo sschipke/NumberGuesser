@@ -31,7 +31,7 @@ resetBtn.addEventListener('click', enableClearButton);
 resetBtn.addEventListener('click', getRandomNumber);
 submitGuess.addEventListener('click', submit);
 submitGuess.addEventListener('click', compareNumbers1);
-
+submitGuess.addEventListener('click', compareNumbers2);
 
 function getRandomNumber(min, max) {
   var min = Math.ceil(min);
@@ -83,9 +83,21 @@ function submit() {
       if (parseInt(guessOne.value) < randomNum) { guessMessage1.innerText = "That's too low!"
      } else if (parseInt(guessOne.value) > randomNum) {
           guessMessage1.innerText = "That's too high!"
-     } 
-     console.log(parseInt(guessOne.value));
+     } else if (parseInt(guessOne.value) === randomNum) {
+          guessMessage1.innerText = 'BOOM!'
+     }
  }
+
+function compareNumbers2() {
+     if (parseInt(guessTwo.value) < randomNum) {
+     guessMessage2.innerText = "That's too low!"
+     } else if (parseInt(guessTwo.value) > randomNum) {
+          guessMessage2.innerText = "That's too high!"
+     } else if (parseInt(guessTwo.value) === randomNum) {
+          guessMessage2.innerText = 'BOOM!'
+     }
+}
+
 
 
 
