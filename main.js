@@ -1,5 +1,6 @@
 var minRange = document.querySelector(".section1__input--min");
 var maxRange = document.querySelector('.section1__input--max');
+var updateBtn =  document.querySelector('.section1__left--btn')
 var guessOne = document.querySelector('.section2__guess1--input');
 var guessTwo = document.querySelector('.section2__guess2--input');
 var clearBtn = document.querySelector('.section2__clear--btn');
@@ -13,6 +14,9 @@ var challenger1Name = document.querySelector('.article1__h4');
 var challenger2Name = document.querySelector('.article2__h4');
 var guess1Out = document.querySelector('.article1__out');
 var guess2Out = document.querySelector('.article2__out');
+var guessMessage1 = document.querySelector('.article1__p2');
+var guessMessage2 = document.querySelector('.article2__p2')
+var randomNum = null;
 
 getRandomNumber();
 enableClearButton();
@@ -29,27 +33,21 @@ clearBtn.addEventListener('click', enableClearButton);
 resetBtn.addEventListener('click', resetGame);
 resetBtn.addEventListener('click', enableClearButton);
 resetBtn.addEventListener('click', getRandomNumber);
-submitGuess.addEventListener('click', submit)
+submitGuess.addEventListener('click', submit);
+submitGuess.addEventListener('click', compareNumbers1);
+submitGuess.addEventListener('click', compareNumbers2);
 
 
-
-function getRandomNumber(min, max) {
-  var min = Math.ceil(min);
-  var max = Math.floor(max);
-  var randomNum = Math.floor((Math.random() * 100) + 1);
-  console.log(randomNum);
-  return randomNum;
-}
 
 /************Functions***************/
 
 function getRandomNumber(min, max) {
   var min = Math.ceil(min);
   var max = Math.floor(max);
-  var randomNum = Math.floor((Math.random() * 100) + 1);
-  console.log(randomNum);
+  randomNum = Math.floor((Math.random() * 100) + 1);
   return randomNum;
 }
+console.log(randomNum)
 
 function enableClearButton() {
      var inputFields = [guessOne.value, guessTwo.value, nameOne.value, guessTwo.value];
@@ -87,7 +85,24 @@ function submit() {
      challenger2Name.innerText = nameTwo.value;
      guess1Out.innerText = guessOne.value;
      guess2Out.innerText = guessTwo.value;
+}
+ function compareNumbers1() {
+      if (parseInt(guessOne.value) < randomNum) { guessMessage1.innerText = "That's too low!"
+     } else if (parseInt(guessOne.value) > randomNum) {
+          guessMessage1.innerText = "That's too high!"
+     } else if (parseInt(guessOne.value) === randomNum) {
+          guessMessage1.innerText = 'BOOM!'
+     }
+ }
 
+function compareNumbers2() {
+     if (parseInt(guessTwo.value) < randomNum) {
+     guessMessage2.innerText = "That's too low!"
+     } else if (parseInt(guessTwo.value) > randomNum) {
+          guessMessage2.innerText = "That's too high!"
+     } else if (parseInt(guessTwo.value) === randomNum) {
+          guessMessage2.innerText = 'BOOM!'
+     }
 }
 
 
