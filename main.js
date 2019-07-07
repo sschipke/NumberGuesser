@@ -16,7 +16,8 @@ var guess1Out = document.querySelector('.article1__out');
 var guess2Out = document.querySelector('.article2__out');
 var upDateBtn = document.querySelector('.section1__left--btn')
 var guessMessage1 = document.querySelector('.article1__p2');
-var guessMessage2 = document.querySelector('.article2__p2')
+var guessMessage2 = document.querySelector('.article2__p2');
+var errorMessage1 = document.querySelector('.guess__error1')
 var randomNum = null;
 getRandomNumber();
 enableClearButton();
@@ -33,9 +34,10 @@ resetBtn.addEventListener('click', resetGame);
 resetBtn.addEventListener('click', enableClearButton);
 resetBtn.addEventListener('click', getRandomNumber);
 submitGuess.addEventListener('click', submit);
-upDateBtn.addEventListener('click', updateRangeInputs);
+submitGuess.addEventListener('click', displayRangeErr);
 submitGuess.addEventListener('click', compareNumbers1);
 submitGuess.addEventListener('click', compareNumbers2);
+upDateBtn.addEventListener('click', updateRangeInputs);
 
 /************Functions***************/
 
@@ -83,6 +85,7 @@ function submit() {
   challenger2Name.innerText = nameTwo.value;
   guess1Out.innerText = guessOne.value;
   guess2Out.innerText = guessTwo.value;
+  displayRangeErr();
 }
 
 function isNotANumber(num) {
@@ -116,3 +119,8 @@ function updateRangeInputs() {
    return randomNum;
 }
 
+function displayRangeErr() {
+  if (parseInt(guessOne.value) <= parseInt(minRange.value)) {
+    errorMessage1.hidden = false
+  }
+}
