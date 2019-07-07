@@ -13,10 +13,10 @@ var challenger1Name = document.querySelector('.article1__h4');
 var challenger2Name = document.querySelector('.article2__h4');
 var guess1Out = document.querySelector('.article1__out');
 var guess2Out = document.querySelector('.article2__out');
+var upDateBtn = document.querySelector('.section1__left--btn')
 
 getRandomNumber();
 enableClearButton();
-getRandomNumber();
 
 
 /**********Event Listeners*************/
@@ -29,17 +29,8 @@ clearBtn.addEventListener('click', enableClearButton);
 resetBtn.addEventListener('click', resetGame);
 resetBtn.addEventListener('click', enableClearButton);
 resetBtn.addEventListener('click', getRandomNumber);
-submitGuess.addEventListener('click', submit)
-
-
-
-function getRandomNumber(min, max) {
-  var min = Math.ceil(min);
-  var max = Math.floor(max);
-  var randomNum = Math.floor((Math.random() * 100) + 1);
-  console.log(randomNum);
-  return randomNum;
-}
+submitGuess.addEventListener('click', submit);
+upDateBtn.addEventListener('click', updateRangeInputs);
 
 /************Functions***************/
 
@@ -52,42 +43,75 @@ function getRandomNumber(min, max) {
 }
 
 function enableClearButton() {
-     var inputFields = [guessOne.value, guessTwo.value, nameOne.value, guessTwo.value];
-     if (inputFields.includes('')) {
-          clearBtn.disabled = true;
-          clearBtn.classList.add('disabled');
-          resetBtn.disabled=true;
-          resetBtn.classList.add('disabled')
-          return;
-     }
-     else {
-          clearBtn.disabled = false;
-          clearBtn.classList.remove('disabled');
-          resetBtn.disabled = false;
-          resetBtn.classList.remove('disabled');
-     }
+  var inputFields = [guessOne.value, guessTwo.value, nameOne.value, guessTwo.value];
+  if (inputFields.includes('')) {
+    clearBtn.disabled = true;
+    clearBtn.classList.add('disabled');
+    resetBtn.disabled=true;
+    resetBtn.classList.add('disabled')
+    return;
+    }
+    else {
+      clearBtn.disabled = false;
+      clearBtn.classList.remove('disabled');
+      resetBtn.disabled = false;
+      resetBtn.classList.remove('disabled');
+  }
 };
 
 function clearGame() {
-     guessOne.value = null;
-     guessTwo.value = null;
+  guessOne.value = null;
+  guessTwo.value = null;
 }
 
 function resetGame() {
-     minRange.value = null;
-     maxRange.value = null;
-     guessOne.value = null;
-     guessTwo.value = null;
-     nameOne.value = null;
-     nameTwo.value = null;
+  minRange.value = null;
+  maxRange.value = null;
+  guessOne.value = null;
+  guessTwo.value = null;
+  nameOne.value = null;
+  nameTwo.value = null;
 }
 
 function submit() {
-     challenger1Name.innerText = nameOne.value;
-     challenger2Name.innerText = nameTwo.value;
-     guess1Out.innerText = guessOne.value;
-     guess2Out.innerText = guessTwo.value;
-
+  challenger1Name.innerText = nameOne.value;
+  challenger2Name.innerText = nameTwo.value;
+  guess1Out.innerText = guessOne.value;
+  guess2Out.innerText = guessTwo.value;
 }
 
+function isNotANumber(num) {
+  return isNaN(parseInt(num));
+}
+
+function compareNumbers1() {
+  if (parseInt(guessOne.value) < randomNum) { guessMessage1.innerText = "That's too low!"
+ } else if (parseInt(guessOne.value) > randomNum) {
+      guessMessage1.innerText = "That's too high!"
+ } else if (parseInt(guessOne.value) === randomNum) {
+      guessMessage1.innerText = 'BOOM!'
+ }
+}
+
+function compareNumbers2() {
+ if (parseInt(guessTwo.value) < randomNum) {
+ guessMessage2.innerText = "That's too low!"
+ } else if (parseInt(guessTwo.value) > randomNum) {
+      guessMessage2.innerText = "That's too high!"
+ } else if (parseInt(guessTwo.value) === randomNum) {
+      guessMessage2.innerText = 'BOOM!'
+ }
+}
+
+function updateRangeInputs() {
+  var min = minRange.value;
+  var max = maxRange.value;
+  if (minRange.value >= maxRange.value){
+  } else {
+     minRange.innerText = min;
+     maxRange.innerText = max;
+  }
+  genNumber = getRandomNumber(min, max);
+  console.log('new', genNumber);
+}
 
