@@ -1,5 +1,6 @@
 var minRange = document.querySelector(".section1__input--min");
 var maxRange = document.querySelector('.section1__input--max');
+var updateBtn =  document.querySelector('.section1__left--btn')
 var guessOne = document.querySelector('.section2__guess1--input');
 var guessTwo = document.querySelector('.section2__guess2--input');
 var clearBtn = document.querySelector('.section2__clear--btn');
@@ -14,7 +15,9 @@ var challenger2Name = document.querySelector('.article2__h4');
 var guess1Out = document.querySelector('.article1__out');
 var guess2Out = document.querySelector('.article2__out');
 var upDateBtn = document.querySelector('.section1__left--btn')
-
+var guessMessage1 = document.querySelector('.article1__p2');
+var guessMessage2 = document.querySelector('.article2__p2')
+var randomNum = null;
 getRandomNumber();
 enableClearButton();
 
@@ -31,16 +34,18 @@ resetBtn.addEventListener('click', enableClearButton);
 resetBtn.addEventListener('click', getRandomNumber);
 submitGuess.addEventListener('click', submit);
 upDateBtn.addEventListener('click', updateRangeInputs);
+submitGuess.addEventListener('click', compareNumbers1);
+submitGuess.addEventListener('click', compareNumbers2);
 
 /************Functions***************/
 
 function getRandomNumber(min, max) {
   var min = Math.ceil(min);
   var max = Math.floor(max);
-  var randomNum = Math.floor((Math.random() * 100) + 1);
-  console.log(randomNum);
+  randomNum = Math.floor((Math.random() * 100) + 1);
   return randomNum;
 }
+console.log(randomNum)
 
 function enableClearButton() {
   var inputFields = [guessOne.value, guessTwo.value, nameOne.value, guessTwo.value];
@@ -84,34 +89,30 @@ function isNotANumber(num) {
   return isNaN(parseInt(num));
 }
 
-function compareNumbers1() {
-  if (parseInt(guessOne.value) < randomNum) { guessMessage1.innerText = "That's too low!"
- } else if (parseInt(guessOne.value) > randomNum) {
-      guessMessage1.innerText = "That's too high!"
- } else if (parseInt(guessOne.value) === randomNum) {
-      guessMessage1.innerText = 'BOOM!'
+ function compareNumbers1() {
+      if (parseInt(guessOne.value) < randomNum) { guessMessage1.innerText = "That's too low!"
+     } else if (parseInt(guessOne.value) > randomNum) {
+          guessMessage1.innerText = "That's too high!"
+     } else if (parseInt(guessOne.value) === randomNum) {
+          guessMessage1.innerText = 'BOOM!'
+     }
  }
-}
 
 function compareNumbers2() {
- if (parseInt(guessTwo.value) < randomNum) {
- guessMessage2.innerText = "That's too low!"
- } else if (parseInt(guessTwo.value) > randomNum) {
-      guessMessage2.innerText = "That's too high!"
- } else if (parseInt(guessTwo.value) === randomNum) {
-      guessMessage2.innerText = 'BOOM!'
- }
+     if (parseInt(guessTwo.value) < randomNum) {
+     guessMessage2.innerText = "That's too low!"
+     } else if (parseInt(guessTwo.value) > randomNum) {
+          guessMessage2.innerText = "That's too high!"
+     } else if (parseInt(guessTwo.value) === randomNum) {
+          guessMessage2.innerText = 'BOOM!'
+     }
 }
 
 function updateRangeInputs() {
-  var min = minRange.value;
-  var max = maxRange.value;
-  if (minRange.value >= maxRange.value){
-  } else {
-     minRange.innerText = min;
-     maxRange.innerText = max;
-  }
-  genNumber = getRandomNumber(min, max);
-  console.log('new', genNumber);
+  var min = parseInt(minRange.value);
+  var max = parseInt(maxRange.value);
+   randomNum = Math.floor((Math.random() * (max - min + 1)) + min);
+   console.log('random number', randomNum);
+   return randomNum;
 }
 
