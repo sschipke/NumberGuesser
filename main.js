@@ -14,13 +14,12 @@ var challenger1Name = document.querySelector('.article1__h4');
 var challenger2Name = document.querySelector('.article2__h4');
 var guess1Out = document.querySelector('.article1__out');
 var guess2Out = document.querySelector('.article2__out');
+var upDateBtn = document.querySelector('.section1__left--btn')
 var guessMessage1 = document.querySelector('.article1__p2');
 var guessMessage2 = document.querySelector('.article2__p2')
 var randomNum = null;
-
 getRandomNumber();
 enableClearButton();
-getRandomNumber();
 
 
 /**********Event Listeners*************/
@@ -34,10 +33,9 @@ resetBtn.addEventListener('click', resetGame);
 resetBtn.addEventListener('click', enableClearButton);
 resetBtn.addEventListener('click', getRandomNumber);
 submitGuess.addEventListener('click', submit);
+upDateBtn.addEventListener('click', updateRangeInputs);
 submitGuess.addEventListener('click', compareNumbers1);
 submitGuess.addEventListener('click', compareNumbers2);
-
-
 
 /************Functions***************/
 
@@ -50,42 +48,47 @@ function getRandomNumber(min, max) {
 console.log(randomNum)
 
 function enableClearButton() {
-     var inputFields = [guessOne.value, guessTwo.value, nameOne.value, guessTwo.value];
-     if (inputFields.includes('')) {
-          clearBtn.disabled = true;
-          clearBtn.classList.add('disabled');
-          resetBtn.disabled=true;
-          resetBtn.classList.add('disabled')
-          return;
-     }
-     else {
-          clearBtn.disabled = false;
-          clearBtn.classList.remove('disabled');
-          resetBtn.disabled = false;
-          resetBtn.classList.remove('disabled');
-     }
+  var inputFields = [guessOne.value, guessTwo.value, nameOne.value, guessTwo.value];
+  if (inputFields.includes('')) {
+    clearBtn.disabled = true;
+    clearBtn.classList.add('disabled');
+    resetBtn.disabled=true;
+    resetBtn.classList.add('disabled')
+    return;
+    }
+    else {
+      clearBtn.disabled = false;
+      clearBtn.classList.remove('disabled');
+      resetBtn.disabled = false;
+      resetBtn.classList.remove('disabled');
+  }
 };
 
 function clearGame() {
-     guessOne.value = null;
-     guessTwo.value = null;
+  guessOne.value = null;
+  guessTwo.value = null;
 }
 
 function resetGame() {
-     minRange.value = null;
-     maxRange.value = null;
-     guessOne.value = null;
-     guessTwo.value = null;
-     nameOne.value = null;
-     nameTwo.value = null;
+  minRange.value = null;
+  maxRange.value = null;
+  guessOne.value = null;
+  guessTwo.value = null;
+  nameOne.value = null;
+  nameTwo.value = null;
 }
 
 function submit() {
-     challenger1Name.innerText = nameOne.value;
-     challenger2Name.innerText = nameTwo.value;
-     guess1Out.innerText = guessOne.value;
-     guess2Out.innerText = guessTwo.value;
+  challenger1Name.innerText = nameOne.value;
+  challenger2Name.innerText = nameTwo.value;
+  guess1Out.innerText = guessOne.value;
+  guess2Out.innerText = guessTwo.value;
 }
+
+function isNotANumber(num) {
+  return isNaN(parseInt(num));
+}
+
  function compareNumbers1() {
       if (parseInt(guessOne.value) < randomNum) { guessMessage1.innerText = "That's too low!"
      } else if (parseInt(guessOne.value) > randomNum) {
@@ -105,4 +108,11 @@ function compareNumbers2() {
      }
 }
 
+function updateRangeInputs() {
+  var min = parseInt(minRange.value);
+  var max = parseInt(maxRange.value);
+   randomNum = Math.floor((Math.random() * (max - min + 1)) + min);
+   console.log('random number', randomNum);
+   return randomNum;
+}
 
