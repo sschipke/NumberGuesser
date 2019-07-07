@@ -37,6 +37,10 @@ submitGuess.addEventListener('click', submit);
 submitGuess.addEventListener('click', compareNumbers1);
 submitGuess.addEventListener('click', compareNumbers2);
 
+
+
+/************Functions***************/
+
 function getRandomNumber(min, max) {
   var min = Math.ceil(min);
   var max = Math.floor(max);
@@ -44,16 +48,6 @@ function getRandomNumber(min, max) {
   return randomNum;
 }
 console.log(randomNum)
-
-/************Functions***************/
-
-function getRandomNumber(min, max) {
-  var min = Math.ceil(min);
-  var max = Math.floor(max);
-  var randomNum = Math.floor((Math.random() * 100) + 1);
-  console.log(randomNum);
-  return randomNum;
-}
 
 function enableClearButton() {
      var inputFields = [guessOne.value, guessTwo.value, nameOne.value, guessTwo.value];
@@ -112,10 +106,3 @@ function compareNumbers2() {
 }
 
 
-<<<<<<< HEAD
-
-
-
-
-=======
->>>>>>> 22b74f87cc9178227394e9897e7d8f22c1158112
