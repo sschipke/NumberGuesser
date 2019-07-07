@@ -17,11 +17,14 @@ var guess2Out = document.querySelector('.article2__out');
 var upDateBtn = document.querySelector('.section1__left--btn')
 var guessMessage1 = document.querySelector('.article1__p2');
 var guessMessage2 = document.querySelector('.article2__p2');
-var errorMessage1 = document.querySelector('.guess__error1')
+var errorMessage1 = document.querySelector('.guess__error1');
+var errorMessage2 = document.querySelector('.guess__error2');
+var span1 = document.querySelector('.section2__span1');
+var span2 = document.querySelector('.section2__span2');
+var rangeErrorMin = document.querySelector('.error__minRange');
 var randomNum = null;
 getRandomNumber();
 enableClearButton();
-
 
 /**********Event Listeners*************/
 
@@ -34,10 +37,13 @@ resetBtn.addEventListener('click', resetGame);
 resetBtn.addEventListener('click', enableClearButton);
 resetBtn.addEventListener('click', getRandomNumber);
 submitGuess.addEventListener('click', submit);
-submitGuess.addEventListener('click', displayRangeErr);
+submitGuess.addEventListener('click', displayGuessErr1);
+submitGuess.addEventListener('click', displayGuessErr2);
 submitGuess.addEventListener('click', compareNumbers1);
 submitGuess.addEventListener('click', compareNumbers2);
 upDateBtn.addEventListener('click', updateRangeInputs);
+upDateBtn.addEventListener('click', displayRangeErr);
+
 
 /************Functions***************/
 
@@ -54,7 +60,7 @@ function enableClearButton() {
   if (inputFields.includes('')) {
     clearBtn.disabled = true;
     clearBtn.classList.add('disabled');
-    resetBtn.disabled=true;
+    resetBtn.disabled = true;
     resetBtn.classList.add('disabled')
     return;
     }
@@ -85,7 +91,8 @@ function submit() {
   challenger2Name.innerText = nameTwo.value;
   guess1Out.innerText = guessOne.value;
   guess2Out.innerText = guessTwo.value;
-  displayRangeErr();
+  displayGuessErr1();
+  displayGuessErr2();
 }
 
 function isNotANumber(num) {
@@ -116,11 +123,36 @@ function updateRangeInputs() {
   var max = parseInt(maxRange.value);
    randomNum = Math.floor((Math.random() * (max - min + 1)) + min);
    console.log('random number', randomNum);
+   displayRange();
    return randomNum;
 }
 
-function displayRangeErr() {
-  if (parseInt(guessOne.value) <= parseInt(minRange.value)) {
+function displayGuessErr1() {
+  if (parseInt(guessOne.value) < parseInt(minRange.value)) {
     errorMessage1.hidden = false
-  }
+  } else if (
+    parseInt(guessOne.value) > parseInt(maxRange.value)) {
+      errorMessage1.hidden = false
+    } else (errorMessage1.hidden = true)
+}
+
+function displayGuessErr2() {
+  if (parseInt(guessTwo.value) < parseInt(minRange.value)) {
+    errorMessage2.hidden = false
+  } else if (
+    parseInt(guessTwo.value) > parseInt(maxRange.value)) {
+      errorMessage2.hidden = false
+    } else (errorMessage2.hidden = true)
+}
+
+function displayRange() {
+  span1.innerText = minRange.value;
+  span2.innerText = maxRange.value;
+}
+
+function displayRangeErr() {
+  if (parseInt(minRange.value) > parseInt(maxRange.value)) {
+    rangeErrorMin.hidden = false;
+  } else {rangeErrorMin.hidden = true 
+    }
 }

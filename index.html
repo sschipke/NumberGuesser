@@ -14,18 +14,19 @@
     <section class="main__left">
     <section class="main__left--section1"> 
        <h3 class="section1--h3">Set Range</h3>
-       <div class="section1__div--minRange">
+       <form class="section1__div--minRange">
          <label class="section1__label--min"> Min Range</label>
-         <input type="Number" class="section1__input--min">
-       </div>
-       <div class="section1__div--maxRange">
+				 <input type="Number" class="section1__input--min">
+				 <div class="error__minRange" hidden>Error: Invaild range!</div>
+       </form>
+       <form class="section1__div--maxRange">
          <label class="section1__label--max"> Max Range </label>
-         <input type= "Number" class="section1__input--max">
-      </div>
+				 <input type= "Number" class="section1__input--max">
+			 </form>
        <button class="section1__left--btn">UPDATE</button>
       </section>
   <section class="main__left--section2">
-    <p class="section2__p"> The Current Range is <span class="section2__span">1</span> to <span class="section2__span">100</span></p>
+    <p class="section2__p"> The Current Range is <span class="section2__span1">1</span> to <span class="section2__span2">100</span></p>
     <h2 class="section2__h2">Challenger 1</h2>
       <div class="name1__div">
         <label class="section2__name1--label">Name</label>
@@ -34,7 +35,7 @@
       <div class="guess1__div">
 				<label class="section2__guess1--label">Guess</label>
         <input type="number" class="section2__guess1--input">
-				<label class="guess__error1" hidden>Error: Not in range!</label>
+				<div class="guess__error1" hidden>Error: Not in range!</div>
       </div> 
       <h2 class="section2__h2">Challenger 2</h2>
       <div class="name2__div">
@@ -44,7 +45,7 @@
       <div class="guess2__div">
 				<label class="section2__guess2--label">Guess</label>
         <input type="number" class="section2__guess2--input">
-				<label class="guess__error2" hidden>Error: Not in range!</label>
+				<div class="guess__error2" hidden>Error: Not in range!</div>
       </div>
       <div class="section2__div--btns">  
       <button class="section2__submit--btn section2__btns">SUBMIT GUESS</button>
