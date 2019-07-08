@@ -339,3 +339,67 @@ padding-left: 10px;
 }
 
 /*********** Main Right **************/
+
+.section__right--art1 {
+  background-color: white;
+  border: solid 4px #D0D2D3;
+  height: 250px;
+  margin: 25px;
+  width: 93%;
+}
+
+.art1__paragraphs {
+  border-bottom: solid 2px #6E6E6E;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 5px;
+  margin: 20px 30px 0 30px;
+}
+
+.art1__p--name1 {
+  color: #6e6e6e;
+  font-size: 1.0em;
+  font-weight: 700;
+}
+
+.art1__p--vs {
+  color: #6e6e6e;
+  font-size: 1.0em;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.art1__p3--name2 {
+  color: #6e6e6e;
+  font-size: 1.0em;
+  font-weight: 700;
+}
+
+.art1__h5--winner {
+  color: #6e6e6e;
+  font-size: 2.0em;
+  font-weight: 100;
+  text-align: center;
+}
+
+.art1__h5--name {
+  color: #6e6e6e;
+  font-size: 2.0em;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.art1__deletebtn {
+  color:#D0D2D3;
+  border-radius: 50%;
+  background-color: #6E6E6E;
+}
+
+.art1__displyinfo {
+  border-top: solid 2px #6E6E6E;
+  color: #6E6E6E;
+  display: flex;
+  justify-content: space-between;
+  margin: 45px 15px 0 15px;
+  padding-top: 5px;
+}
