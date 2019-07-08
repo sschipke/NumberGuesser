@@ -100,7 +100,9 @@ padding-left: 10px;
 
 .section1__input--min {
   display: block;
+  font-size: 1.2em;
   height: 45px;
+  padding-left: 10px;
   width: 285px;
 }
 
@@ -118,7 +120,9 @@ padding-left: 10px;
 
 .section1__input--max {
   display: block;
+  font-size: 1.2em;
   height: 45px;
+  padding-left: 10px;
   width: 285px;
 }
 
@@ -180,6 +184,7 @@ padding-left: 10px;
 }
 
 .section2__name1--input {
+  font-size: 1.2em;
   height: 48px;
   padding-left: 10px;
   width: 470px;
@@ -198,7 +203,9 @@ padding-left: 10px;
 }
 
 .section2__guess1--input {
+  font-size: 1.2em;
   height: 48px;
+  padding-left: 10px;
   width: 270px;
 }
 
@@ -213,6 +220,7 @@ padding-left: 10px;
 }
 
 .section2__name2--input {
+  font-size: 1.2em;
   height: 48px;
   padding-left: 10px;
   width: 470px;
@@ -230,7 +238,9 @@ padding-left: 10px;
 
 .section2__guess2--input {
   display: block;
+  font-size: 1.2em;
   height: 48px;
+  padding-left: 10px;
   width: 270px;
 }
 
@@ -351,9 +361,9 @@ padding-left: 10px;
 .section__right--art1 {
   background-color: white;
   border: solid 4px #D0D2D3;
-  height: 250px;
+  height: 310px;
   margin: 25px;
-  width: 93%;
+  width: 89%;
 }
 
 .art1__paragraphs {
@@ -361,46 +371,60 @@ padding-left: 10px;
   display: flex;
   justify-content: space-between;
   padding-bottom: 5px;
-  margin: 20px 30px 0 30px;
+  margin: 20px 40px 0 40px;
 }
 
 .art1__p--name1 {
   color: #6e6e6e;
-  font-size: 1.0em;
+  font-size: 1.7em;
   font-weight: 700;
+  margin-left: 50px;
 }
 
 .art1__p--vs {
   color: #6e6e6e;
-  font-size: 1.0em;
+  font-size: 1.7em;
   margin-left: 10px;
   margin-right: 10px;
 }
 
 .art1__p3--name2 {
   color: #6e6e6e;
-  font-size: 1.0em;
+  font-size: 1.7em;
   font-weight: 700;
+  margin-right: 50px;
 }
 
 .art1__h5--winner {
   color: #6e6e6e;
-  font-size: 2.0em;
+  font-size: 2.7em;
   font-weight: 100;
   text-align: center;
 }
 
 .art1__h5--name {
   color: #6e6e6e;
-  font-size: 2.0em;
+  font-size: 2.7em;
   margin-top: 20px;
   text-align: center;
 }
 
+.art1__guessNumber {
+  font-size: 1.2em;
+}
+
+.art1__minTime {
+  font-size: 1.2em;
+}
+
 .art1__deletebtn {
-  color:#D0D2D3;
+  background-color: #6e6e6e;
   border-radius: 50%;
-  background-color: #6E6E6E;
+  color: #D0D2D3;
+  height: 30px;
+  font-size: 1em;
+  font-weight: 400;
+  width: 32px;
 }
 
 .art1__displyinfo {
@@ -408,8 +432,8 @@ padding-left: 10px;
   color: #6E6E6E;
   display: flex;
   justify-content: space-between;
-  margin: 45px 15px 0 15px;
-  padding-top: 5px;
+  margin: 40px 40px 0 40px;
+  padding-top: 12px;
 }
 
 /****** Media queries *********/
