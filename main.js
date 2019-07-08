@@ -57,18 +57,20 @@ console.log(randomNum)
 
 function enableClearButton() {
   var inputFields = [guessOne.value, guessTwo.value, nameOne.value, guessTwo.value];
-  if (inputFields.includes('')) {
+  if (inputFields.includes("")) {
     clearBtn.disabled = true;
-    clearBtn.classList.add('disabled');
+    clearBtn.classList.add("disabled");
     resetBtn.disabled = true;
-    resetBtn.classList.add('disabled')
+    resetBtn.classList.add("disabled")
     return;
     }
     else {
       clearBtn.disabled = false;
-      clearBtn.classList.remove('disabled');
+      clearBtn.classList.remove("disabled");
+      clearBtn.classList.add("hover");
       resetBtn.disabled = false;
-      resetBtn.classList.remove('disabled');
+      resetBtn.classList.remove("disabled");
+      resetBtn.classList.add("hover")
   }
 };
 
