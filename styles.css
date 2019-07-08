@@ -140,6 +140,9 @@ padding-left: 10px;
     width: 120px;
     background-color: #6E6E6E;
 }
+.section1__left--btn:hover {
+  background-color: #DD1972;
+}
 
 /******* Main Left Section 2 *******/
 
@@ -242,9 +245,15 @@ padding-left: 10px;
   outline: none;
   width: 175px;
 }
+.section2__submit--btn:hover {
+  background-color: #DD1972;
+}
 
 .disabled {
   background-color: #D0D2D3;
+}
+.hover:hover {
+  background-color: #DD1972;
 }
 
 /******* Main Left Section 3 *******/
@@ -387,7 +396,7 @@ padding-left: 10px;
 
 .main__left--section2 {
   height: 500px;
-  margin: 10px 100px 0 10px;
+  margin: 10px 110px 0 10px;
   width: 305px;
 }
 
