@@ -140,6 +140,9 @@ padding-left: 10px;
     width: 120px;
     background-color: #6E6E6E;
 }
+.section1__left--btn:hover {
+  background-color: #DD1972;
+}
 
 /******* Main Left Section 2 *******/
 
@@ -242,9 +245,15 @@ padding-left: 10px;
   outline: none;
   width: 175px;
 }
+.section2__submit--btn:hover {
+  background-color: #DD1972;
+}
 
 .disabled {
   background-color: #D0D2D3;
+}
+.hover:hover {
+  background-color: #DD1972;
 }
 
 /******* Main Left Section 3 *******/
@@ -339,7 +348,6 @@ padding-left: 10px;
 }
 
 /*********** Main Right **************/
-
 .section__right--art1 {
   background-color: white;
   border: solid 4px #D0D2D3;
@@ -402,4 +410,97 @@ padding-left: 10px;
   justify-content: space-between;
   margin: 45px 15px 0 15px;
   padding-top: 5px;
+}
+
+/****** Media queries *********/
+@media screen and (max-width:321px){
+.body__main {
+  display: inline-block;
+} 
+
+.body__header {
+  height: 100px;
+  width: 100%;
+}
+
+.header__h1 {
+  text-align: center;
+  font-size: 2.5em;
+}
+
+.header__h2 {
+  font-size: 1em;
+  bottom: 20px;
+}
+
+.main__left {
+  height: 1380px;
+  width: 75%;
+  margin-right: 10px;
+}
+.main__left--section1 {
+  margin: 0 10px;
+  height: 240px;
+}
+
+.section1__input--min,
+.section1__input--max {
+  border-color:#D0D2D3;
+  width: 270px;
+}
+
+.section1__left--btn {
+  margin-left: 10px;
+  margin-top: 15px;
+}
+
+.main__left--section2 {
+  height: 500px;
+  margin: 10px 110px 0 10px;
+  width: 305px;
+}
+
+.section2__p {
+  font-size: 1.2em;
+}
+.section2__h2 {
+  font-size: 1.3em;
+  padding: 5px 5px; 
+}
+
+.guess1__div,
+.guess2__div {
+  margin-bottom: 5px;
+  margin-left: 10px;
+}
+
+.section2__guess1--input,
+.section2__guess2--input,
+.section2__name1--input,
+.section2__name2--input {
+  border-color: #D0D2D3;
+  padding-left: 10px;
+  width: 275px;
+}
+
+.section2__btns {
+  margin: 5px 10px;
+  width: 270px;
+}
+
+.main__left--section3 {
+  height: 580px;
+  margin: 10px;
+}
+.section3__article1 {
+  border-right: none;
+  border: 5px #6E6E6E;
+  display: block;
+  width: 100%;
+}
+
+.section3__article2{
+  display: block;
+  width: 100%;
+}
 }
