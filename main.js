@@ -183,8 +183,8 @@ function appendWinnerCard() {
       <h5 class="art1__h5--name">CHALLENGER NAME</h5>
       <h5 class="art1__h5--winner">WINNER</h5>
       <div class="art1__displyinfo">
-        <p class="art1__guessNumber">XGUESSES</p>
-        <p class="art1__minTime">XMINUTES</p>
+        <p class="art1__guessNumber"><span class="art1__spans"> X </span>GUESSES</p>
+        <p class="art1__minTime"><span class="art1__spans"> X </span>MINUTES</p>
         <button class="art1__deletebtn">X</button>
       </div>
     </article>`);

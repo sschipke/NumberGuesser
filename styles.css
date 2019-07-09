@@ -413,6 +413,11 @@ padding-left: 10px;
   font-size: 1.2em;
 }
 
+.art1__spans {
+  font-weight: 800;
+  text-decoration: underline;
+}
+
 .art1__minTime {
   font-size: 1.2em;
 }
@@ -431,6 +436,7 @@ padding-left: 10px;
   border-top: solid 2px #6E6E6E;
   color: #6E6E6E;
   display: flex;
+  font-size: 1.3em;
   justify-content: space-between;
   margin: 40px 40px 0 40px;
   padding-top: 12px;
