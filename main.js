@@ -25,17 +25,17 @@ var rangeErrorMin = document.querySelector('.error__minRange');
 var winnerCardDisplay = document.querySelector('.main__right');
 var randomNum = null;
 getRandomNumber();
-enableClearButton();
+disableClearButton();
 
 /**********Event Listeners*************/
 
-guessOne.addEventListener('keyup',enableClearButton);
-guessTwo.addEventListener('keyup',enableClearButton);
-nameOne.addEventListener('keyup',enableClearButton);
+guessOne.addEventListener('keyup',disableClearButton);
+guessTwo.addEventListener('keyup',disableClearButton);
+nameOne.addEventListener('keyup',disableClearButton);
 clearBtn.addEventListener('click', clearGame);
-clearBtn.addEventListener('click', enableClearButton);
+clearBtn.addEventListener('click', disableClearButton);
 resetBtn.addEventListener('click', resetGame);
-resetBtn.addEventListener('click', enableClearButton);
+resetBtn.addEventListener('click', disableClearButton);
 resetBtn.addEventListener('click', getRandomNumber);
 submitGuess.addEventListener('click', submit);
 submitGuess.addEventListener('click', displayGuessErr1);
@@ -52,24 +52,38 @@ function getRandomNumber() {
 }
 console.log(randomNum)
 
-function enableClearButton() {
+function disableClearButton() {
   var inputFields = [guessOne.value, guessTwo.value, nameOne.value, nameTwo.value];
   if (inputFields.includes("")) {
     clearBtn.disabled = true;
+    clearBtn.classList.remove("hover");
     clearBtn.classList.add("disabled");
     resetBtn.disabled = true;
-    resetBtn.classList.add("disabled")
-    return;
-    }
-    else {
-      clearBtn.disabled = false;
-      clearBtn.classList.remove("disabled");
-      clearBtn.classList.add("hover");
-      resetBtn.disabled = false;
-      resetBtn.classList.remove("disabled");
-      resetBtn.classList.add("hover")
-  }
-};
+    resetBtn.classList.remove("hover");
+    resetBtn.classList.add("disabled");
+    disableResetButton();
+    } else { enableClearButton(), enableResetButton()}
+  };
+
+function enableClearButton() {
+clearBtn.disabled = false;
+clearBtn.classList.remove("disabled");
+clearBtn.classList.add("hover");
+enableResetButton();
+}
+
+function disableResetButton() {
+    resetBtn.disabled = true;
+    resetBtn.classList.add("disabled");
+    resetBtn.classList.remove("hover")
+}
+ 
+
+function enableResetButton() {
+  resetBtn.disabled = false;
+  resetBtn.classList.remove("disabled");
+  resetBtn.classList.add("hover")
+}
 
 function clearGame() {
   guessOne.value = null;
