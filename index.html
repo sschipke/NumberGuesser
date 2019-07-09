@@ -1,80 +1,82 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Number Guesser</title>
-  <link href= "styles.css" rel= "stylesheet" type= "text/css">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&display=swap" rel="stylesheet"?|>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
-	<header class="body__header">
-  	<h1 class="header__h1">Number<span class="header__span">Guesser</span></h1>
-    <h2 class="header__h2">Ultimate Challenger Addition</h2>
-	</header>
-	<main class="body__main">
-    <section class="main__left">
-    <section class="main__left--section1"> 
-      <h3 class="section1--h3">Set Range</h3>
-      <form class="section1__div--minRange">
-        <label class="section1__label--min"> Min Range</label>
-				<input type="Number" class="section1__input--min">
-				<div class="error__minRange" hidden>Error: Invaild range!</div>
-      </form>
-      <form class="section1__div--maxRange">
-        <label class="section1__label--max"> Max Range </label>
-				<input type= "Number" class="section1__input--max">
-			</form>
-      <button class="section1__left--btn">UPDATE</button>
-    </section>
-  <section class="main__left--section2">
-    <p class="section2__p"> The Current Range is <span class="section2__span1">1</span> to <span class="section2__span2">100</span></p>
-    <h2 class="section2__h2">Challenger 1</h2>
-      <div class="name1__div">
-        <label class="section2__name1--label">Name</label>
-        <input type="text" class="section2__name1--input">
-      </div>
-      <div class="guess1__div">
-				<label class="section2__guess1--label">Guess</label>
-        <input type="number" class="section2__guess1--input">
-				<div class="guess__error1" hidden>Error: Not in range!</div>
-      </div> 
-      <h2 class="section2__h2">Challenger 2</h2>
-      <div class="name2__div">
-        <label class="section2__name2--label">Name</label>
-        <input type="text" class="section2__name2--input">
-        </div>
-      <div class="guess2__div">
-				<label class="section2__guess2--label">Guess</label>
-        <input type="number" class="section2__guess2--input">
-				<div class="guess__error2" hidden>Error: Not in range!</div>
-      </div>
-      <div class="section2__div--btns">  
-      <button class="section2__submit--btn section2__btns">SUBMIT GUESS</button>
-      <button class="section2__reset--btn section2__btns">RESET GAME</button>
-      <button class="section2__clear--btn section2__btns">CLEAR GAME</button>
-      </div>
-  </section>
-  <section class="main__left--section3">
-    <h3 class="section3__h3">Latest Score</h3>
-        <div class="section3__div">
-          <article class="section3__article1">
-            <h4 class="article1__h4"> Challenger 1 Name</h4>
-            <p class="article1__p1">current guess</p>
-            <output class="article1__out">#</output>
-            <p class="article1__p2">that's too high</p>
-        </article>
-        <article class="section3__article2">
-          <h4 class="article2__h4"> Challenger 2 Name</h4>
-          <p class="article2__p1">current guess</p>
-          <output class="article2__out">#</output>
-          <p class="article2__p2">that's too high</p>
-      </article>
-      </div>
-		</section>
-	</section>
-  <section class="main__right">
-	</section>
-</main>
-</body>
-<script src="main.js"></script>
+  <head>
+    <title>Number Guesser</title>
+    <link href= "styles.css" rel= "stylesheet" type= "text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&display=swap" rel="stylesheet"?|>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+	  <header class="body__header">
+  	  <h1 class="header__h1">Number<span class="header__span">Guesser</span></h1>
+      <h2 class="header__h2">Ultimate Challenger Addition</h2>
+	  </header>
+	  <main class="body__main">
+      <section class="main__left">
+        <section class="main__left--section1"> 
+          <h3 class="section1--h3">Set Range</h3>
+          <form class="section1__div--minRange">
+            <label class="section1__label--min"> Min Range</label>
+				    <input type="Number" class="section1__input--min">
+				    <div class="error__minRange" hidden>Error: Invaild range!</div>
+          </form>
+          <form class="section1__div--maxRange">
+            <label class="section1__label--max"> Max Range </label>
+				    <input type= "Number" class="section1__input--max">
+			    </form>
+          <button class="section1__left--btn">UPDATE</button>
+          </section>
+        <section class="main__left--section2">
+          <p class="section2__p"> The Current Range is 
+            <span class="section2__span1">1</span>
+            to<span class="section2__span2">100</span></p>
+          <h2 class="section2__h2">Challenger 1</h2>
+          <div class="name1__div">
+            <label class="section2__name1--label">Name</label>
+            <input type="text" class="section2__name1--input">
+          </div>
+          <div class="guess1__div">
+				    <label class="section2__guess1--label">Guess</label>
+            <input type="number" class="section2__guess1--input">
+				    <div class="guess__error1" hidden>Error: Not in range!</div>
+            </div> 
+          <h2 class="section2__h2">Challenger 2</h2>
+          <div class="name2__div">
+            <label class="section2__name2--label">Name</label>
+            <input type="text" class="section2__name2--input">
+          </div>
+          <div class="guess2__div">
+				    <label class="section2__guess2--label">Guess</label>
+            <input type="number" class="section2__guess2--input">
+				    <div class="guess__error2" hidden>Error: Not in range!</div>
+          </div>
+          <div class="section2__div--btns">  
+            <button class="section2__submit--btn section2__btns">SUBMIT GUESS</button>
+            <button class="section2__reset--btn section2__btns">RESET GAME</button>
+            <button class="section2__clear--btn section2__btns">CLEAR GAME</button>
+          </div>
+         </section>
+         <section class="main__left--section3">
+           <h3 class="section3__h3">Latest Score</h3>
+           <div class="section3__div">
+            <article class="section3__article1">
+             <h4 class="article1__h4"> Challenger 1 Name</h4>
+             <p class="article1__p1">current guess</p>
+             <output class="article1__out">#</output>
+             <p class="article1__p2">that's too high</p>
+            </article>
+            <article class="section3__article2">
+              <h4 class="article2__h4"> Challenger 2 Name</h4>
+              <p class="article2__p1">current guess</p>
+              <output class="article2__out">#</output>
+              <p class="article2__p2">that's too high</p>
+            </article>
+            </div>
+		      </section>
+	      </section>
+        <section class="main__right">
+	      </section>
+      </main>
+    </body>
+  <script src="main.js"></script>
 </html>
