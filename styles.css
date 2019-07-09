@@ -1,38 +1,42 @@
 *,
 *:after,
 *:before {
-    font-family:'Open Sans',sans-serif;
   box-sizing: border-box;
+  font-family:'Open Sans',sans-serif;
   margin: 0;
 }
 body {
-  margin: 0;
   padding: 0;
+  margin: 0;
 }
 .body__main {
   display: flex;
   }
+
 /****** Header ******/
+
 .body__header {
-    height: 200px;
-    display: flex;
-    justify-content: center;
-    background-color: #404041;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 100%;
+  background-color: #404041;
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  justify-content: center;
+  justify-content: space-around;
+  width: 100%;
 }
 .header__h1 {
-    color: #DD1972;
-    text-align: center;
-    font-size: 6em;
-    font-weight: 800;
-    border-bottom: solid 1px white;
-    margin: 0 auto;
+  border-bottom: solid 1px white;
+  color: #DD1972;
+  font-size: 6em;
+  font-weight: 800;
+  margin: 0 auto;
+  text-align: center;
 }
+
 .header__span {
-font-weight: 300;
+  font-weight: 300;
 }
+
 .header__h2 {
   color: white;
   bottom: 35px;
@@ -45,40 +49,50 @@ font-weight: 300;
   z-index: 1;
 }
 /******* Main left/right *******/
+
 .main__left {
-  width: 50%;
   background-color: #D0D2D3;
   padding-top:20px;
+  width: 50%;
 }
 .main__right {
   background-color:#6E6E6E;
   width:50%;
 }
+
 /************** Main Left Section 1 **********/
+
 .main__left--section1 {
   background-color: white;
   border: solid 4px #F7F7F7;
   height: 155px;
   margin: 0 50px;
 }
+
 .section1--h3 {
   color: #6E6E6E;
   font-size: 1.8em;
   padding: 10px 0px 2px 10px;
 }
+
 .section1__div--minRange {
-display: inline-block;
-padding-left: 10px;
+  display: inline-block;
+  padding-left: 10px;
 }
+
 .error__minRange {
   color: #DD1972;
   position: absolute;
 }
+
+.section1__label--max,
 .section1__label--min {
   color: #6E6E6E;
   font-size: 1.4em;
   font-weight: 300;
 }
+
+.section1__input--max,
 .section1__input--min {
   display: block;
   font-size: 1.2em;
@@ -86,26 +100,16 @@ padding-left: 10px;
   padding-left: 10px;
   width: 285px;
 }
+
 .section1__div--maxRange {
   display: inline-block;
   padding-left: 20px;
 }
-.section1__label--max {
-  color: #6E6E6E;
-  font-weight: 300;
-  font-size: 1.4em;
-}
-.section1__input--max {
-  display: block;
-  font-size: 1.2em;
-  height: 45px;
-  padding-left: 10px;
-  width: 285px;
-}
+
 .section1__left--btn {
-  color: white;
   background-color: #6E6E6E;
   border-radius: 50px;
+  color: white;
   font-size: 1em;
   font-weight: 700;
   height: 48px;
@@ -113,10 +117,13 @@ padding-left: 10px;
   outline: none;
   width: 135px;
 }
+
 .section1__left--btn:hover {
   background-color: #DD1972;
 }
+
 /******* Main Left Section 2 *******/
+
 .main__left--section2 {
   background-color: white;
   border: solid 4px #F7F7F7;
@@ -124,75 +131,71 @@ padding-left: 10px;
   margin: 0 50px;
   margin-top: 30px;
 }
+
 .section2__p {
   color: #6E6E6E;
   font-size: 1.8em;
   padding: 10px;
 }
+
 .section2__span1,
 .section2__span2 {
   font-weight: 800;
   text-decoration: underline;
 }
+
 .section2__h2 {
   color: #6E6E6E;
   font-weight: 800;
   font-size: 2.0em;
   padding: 10px;
 }
-.name1__div {
-  display: inline-block;
-  padding-left: 10px;
-}
-.section2__name1--label {
-  color: #6E6E6E;
-  display: block;
-  font-size: 1.3em;
-}
-.section2__name1--input {
-  font-size: 1.2em;
-  height: 48px;
-  padding-left: 10px;
-  width: 470px;
-}
-.guess1__div{
-  display: inline-block;
-  margin-left: 60px; 
-}
-.section2__guess1--label {
-  color: #6E6E6E;
-  display: block;
-  font-size: 1.3em;
-}
-.section2__guess1--input {
-  font-size: 1.2em;
-  height: 48px;
-  padding-left: 10px;
-  width: 270px;
-}
+
+.name1__div,
 .name2__div {
   display: inline-block;
   padding-left: 10px;
 }
+
+.section2__name1--label,
 .section2__name2--label {
   color: #6E6E6E;
   display: block;
   font-size: 1.3em;
 }
+
+.section2__name1--input,
 .section2__name2--input {
   font-size: 1.2em;
   height: 48px;
   padding-left: 10px;
   width: 470px;
 }
+
+.guess1__div,
 .guess2__div {
   display: inline-block;
-  margin-left: 60px;
+  margin-left: 60px; 
 }
+
+.section2__guess1--label {
+  color: #6E6E6E;
+  display: block;
+  font-size: 1.3em;
+}
+
+.section2__guess1--input {
+  font-size: 1.2em;
+  height: 48px;
+  padding-left: 10px;
+  width: 270px;
+}
+
 .section2__guess2--label {
   color: #6E6E6E;
   font-size: 1.3em;
 }
+
 .section2__guess2--input {
   display: block;
   font-size: 1.2em;
@@ -200,6 +203,7 @@ padding-left: 10px;
   padding-left: 10px;
   width: 270px;
 }
+
 .section2__btns {
   background-color: #6E6E6E;
   border-radius: 50px;
@@ -211,16 +215,21 @@ padding-left: 10px;
   outline: none;
   width: 230px;
 }
+
 .section2__submit--btn:hover {
   background-color: #DD1972;
 }
+
 .disabled {
   background-color: #D0D2D3;
 }
+
 .hover:hover {
   background-color: #DD1972;
 }
+
 /******* Main Left Section 3 *******/
+
 .main__left--section3 {
   background-color: white;
   border: solid 4px #F7F7F7;
@@ -228,14 +237,17 @@ padding-left: 10px;
   margin: 20px 50px 20px 50px;
   text-align: center;
 }
+
 .section3__h3 {
   font-size: 1.9em;
   float: left;
   margin: 5px 0px 0px 10px;
 }
+
 .section3__div {
   padding-top: 10%;
 }
+
 .section3__article1 {
   border-right: #404041 2px solid;
   display: inline-block;
@@ -243,60 +255,51 @@ padding-left: 10px;
   text-align: center;
   width: 45%;
 }
-.article1__h4 {
-  color: #6E6E6E;
-  font-size: 1.8em;
-  font-weight: 700;
+
+.section3__article2 {
+  display: inline-block;
+  text-align: center;
+  height: 50%;
+  width: 45%;
 }
-.article1__p1 {
-  color: #6E6E6E;
-  font-weight: 300;
-  font-size: 1.4em;
-}
-.article1__out {
-  display: block;
-  font-size: 7em;
-  font-weight: 800;
-  color: #DD1972;
-}
-.article1__p2 {
-  color: #6E6E6E;
-  font-size: 1.8em;
-  font-weight: 300; 
-}
+
+.article1__h4,
 .article2__h4 {
   color: #6E6E6E;
   font-size: 1.8em;
   font-weight: 700;
 }
-.section3__article2 {
-  display: inline-block;
-  text-align: center;
-  height: 50%;
-    width: 45%;
-}
-.guess__error1,
-.guess__error2 {
-  color: #DD1972;
-  position: absolute;
-}
+
+.article1__p1,
 .article2__p1 {
   color: #6E6E6E;
   font-weight: 300;
   font-size: 1.4em;
 }
+
+.article1__out,
 .article2__out {
   color: #DD1972;
   display: block;
-  font-weight: 800;
   font-size: 7em;
+  font-weight: 800;
 }
+
+.article1__p2,
 .article2__p2 {
   color: #6E6E6E;
   font-size: 1.8em;
-  font-weight: 300; 
+  font-weight: 300;
 }
+
+.guess__error1,
+.guess__error2 {
+  color: #DD1972;
+  position: absolute;
+}
+
 /*********** Main Right **************/
+
 .section__right--art1 {
   background-color: white;
   border: solid 4px #D0D2D3;
@@ -304,6 +307,7 @@ padding-left: 10px;
   margin: 25px;
   width: 89%;
 }
+
 .art1__paragraphs {
   border-bottom: solid 2px #6E6E6E;
   display: flex;
@@ -311,55 +315,65 @@ padding-left: 10px;
   padding-bottom: 5px;
   margin: 20px 40px 0 40px;
 }
+
 .art1__p--name1 {
   color: #6e6e6e;
   font-size: 1.7em;
   font-weight: 700;
   margin-left: 50px;
 }
+
 .art1__p--vs {
   color: #6e6e6e;
   font-size: 1.7em;
   margin-left: 10px;
   margin-right: 10px;
 }
+
 .art1__p3--name2 {
   color: #6e6e6e;
   font-size: 1.7em;
   font-weight: 700;
   margin-right: 50px;
 }
+
 .art1__h5--winner {
   color: #6e6e6e;
   font-size: 2.7em;
   font-weight: 100;
   text-align: center;
 }
+
 .art1__h5--name {
   color: #6e6e6e;
   font-size: 2.7em;
   margin-top: 20px;
   text-align: center;
 }
+
 .art1__guessNumber {
   font-size: 1.2em;
 }
+
 .art1__spans {
   font-weight: 800;
   text-decoration: underline;
 }
+
 .art1__minTime {
   font-size: 1.2em;
 }
+
 .art1__deletebtn {
   background-color: #6e6e6e;
   border-radius: 50%;
   color: #D0D2D3;
-  height: 30px;
   font-size: 1em;
   font-weight: 400;
+  height: 30px;
   width: 32px;
 }
+
 .art1__displyinfo {
   border-top: solid 2px #6E6E6E;
   color: #6E6E6E;
@@ -369,8 +383,10 @@ padding-left: 10px;
   margin: 40px 40px 0 40px;
   padding-top: 12px;
 }
+
 /****** Media queries *********/
-@media (min-width:1281px) {
+
+@media screen and (min-width:1200px) {
 
   .main__left--section2 {
     height: 410px;
@@ -481,88 +497,108 @@ padding-left: 10px;
 }
 
 @media screen and (max-width:321px){
-.body__main {
-  display: inline-block;
-} 
-.body__header {
-  height: 100px;
-  width: 100%;
-}
-.header__h1 {
-  text-align: center;
-  font-size: 2em;
-}
-.header__h2 {
-  font-size: 1em;
-  bottom: 25px;
-}
-.main__left {
-  height: 1585px;
-  width: 320px;
-  margin-right: 10px;
-}
-.main__left--section1 {
-  margin: 0 10px;
-  height: 295px;
-  width:95%;
-}
-.section1__div--maxRange {
-  margin-top: 15px;
-  padding-left: 10px;
-}
-.section1__input--min,
-.section1__input--max {
-  border-color:#D0D2D3;
-  width: 270px;
-}
-.section1__left--btn {
-  margin-left: 10px;
-  margin-top: 15px;
-}
-.main__left--section2 {
-  height: 660px;
-  margin: 10px 110px 0 10px;
-  width: 305px;
-}
-.section2__p {
-  font-size: 1.2em;
-}
-.section2__h2 {
-  font-size: 1.3em;
-  padding: 14px 5px; 
-}
-.guess1__div,
-.guess2__div {
-  margin-bottom: 5px;
-  margin-left: 10px;
-}
-.section2__guess1--input,
-.section2__guess2--input,
-.section2__name1--input,
-.section2__name2--input {
-  border-color: #D0D2D3;
-  padding-left: 10px;
-  width: 275px;
-}
-.section2__div--btns {
-  margin-top: 15px;
-}
-.section2__btns {
-  margin: 5px 10px;
-  width: 270px;
-}
-.main__left--section3 {
-  height: 580px;
-  margin: 10px;
-}
-.section3__article1 {
-  border-right: none;
-  border-bottom: solid 1px #D0D2D3;
+
+  .body__main {
+    display: inline-block;
+  } 
+
+  .body__header {
+    height: 100px;
+    width: 100%;
+  }
+
+  .header__h1 {
+    font-size: 2em;
+    text-align: center;
+  }
+
+  .header__h2 {
+    bottom: 25px;
+    font-size: 1em;
+  }
+
+  .main__left {
+    height: 1585px;
+    margin-right: 10px;
+    width: 320px;
+  }
+
+  .main__left--section1 {
+    height: 295px;
+    margin: 0 10px;
+    width:95%;
+  }
+
+  .section1__div--maxRange {
+    margin-top: 15px;
+    padding-left: 10px;
+  }
+
+  .section1__input--min,
+  .section1__input--max {
+    border-color:#D0D2D3;
+    width: 270px;
+  }
+
+  .section1__left--btn {
+    margin-left: 10px;
+    margin-top: 15px;
+  }
+
+  .main__left--section2 {
+    height: 660px;
+    margin: 10px 110px 0 10px;
+    width: 305px;
+  }
+
+  .section2__p {
+    font-size: 1.2em;
+  }
+
+  .section2__h2 {
+    font-size: 1.3em;
+    padding: 14px 5px; 
+  }
+
+  .guess1__div,
+  .guess2__div {
+    margin-bottom: 5px;
+    margin-left: 10px;
+  }
+
+  .section2__guess1--input,
+  .section2__guess2--input,
+  .section2__name1--input,
+  .section2__name2--input {
+    border-color: #D0D2D3;
+    padding-left: 10px;
+    width: 275px;
+  }
+
+  .section2__div--btns {
+    margin-top: 15px;
+  }
+
+  .section2__btns {
+    margin: 5px 10px;
+    width: 270px;
+  }
+
+  .main__left--section3 {
+    height: 580px;
+    margin: 10px;
+  }
+
+  .section3__article1 {
+    border-right: none;
+    border-bottom: solid 1px #D0D2D3;
+    display: block;
+    width: 100%;
+  }
+
+  .section3__article2{
   display: block;
   width: 100%;
-}
-.section3__article2{
-  display: block;
-  width: 100%;
-}
+  }
+
 }
