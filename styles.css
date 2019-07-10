@@ -149,6 +149,7 @@ body {
   font-weight: 800;
   font-size: 2.0em;
   padding: 10px;
+  padding-top: 18px;
 }
 
 .name1__div,
@@ -170,6 +171,12 @@ body {
   height: 48px;
   padding-left: 10px;
   width: 470px;
+}
+
+.section2__name1--err1,
+.section2__name2--err2 {
+  color: #DD1972;
+  position: absolute;
 }
 
 .guess1__div,
