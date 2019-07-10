@@ -10,8 +10,6 @@ var resetBtn = document.querySelector('.section2__reset--btn');
 var submitGuess = document.querySelector('.section2__submit--btn');
 var challenger1Name = document.querySelector('.article1__h4');
 var challenger2Name = document.querySelector('.article2__h4');
-var challenger1Name = document.querySelector('.article1__h4');
-var challenger2Name = document.querySelector('.article2__h4');
 var guess1Out = document.querySelector('.article1__out');
 var guess2Out = document.querySelector('.article2__out');
 var upDateBtn = document.querySelector('.section1__left--btn')
@@ -23,6 +21,8 @@ var span1 = document.querySelector('.section2__span1');
 var span2 = document.querySelector('.section2__span2');
 var rangeErrorMin = document.querySelector('.error__minRange');
 var winnerCardDisplay = document.querySelector('.main__right');
+var nameErr1 = document.querySelector('.section2__name1--err1');
+var nameErr2 = document.querySelector('.section2__name2--err2');
 var randomNum = null;
 getRandomNumber();
 disableClearButton();
@@ -40,7 +40,6 @@ resetBtn.addEventListener('click', getRandomNumber);
 submitGuess.addEventListener('click', submit);
 submitGuess.addEventListener('click', displayGuessErr1);
 submitGuess.addEventListener('click', displayGuessErr2);
-submitGuess.addEventListener('click', compareNumbers1);
 submitGuess.addEventListener('click', compareNumbers2);
 upDateBtn.addEventListener('click', updateRangeInputs);
 
@@ -58,12 +57,25 @@ function disableClearButton() {
     clearBtn.disabled = true;
     clearBtn.classList.remove("hover");
     clearBtn.classList.add("disabled");
-    resetBtn.disabled = true;
-    resetBtn.classList.remove("hover");
-    resetBtn.classList.add("disabled");
     disableResetButton();
     } else { enableClearButton(), enableResetButton()}
   };
+  
+ function clearGame() {
+    guessOne.value = null;
+    guessTwo.value = null;
+  }
+  
+ function resetGame() {
+    getRandomNumber();
+    console.log(randomNum)
+    minRange.value = null;
+    maxRange.value = null;
+    guessOne.value = null;
+    guessTwo.value = null;
+    nameOne.value = null;
+    nameTwo.value = null;
+  }
 
 function enableClearButton() {
 clearBtn.disabled = false;
@@ -85,25 +97,15 @@ function enableResetButton() {
   resetBtn.classList.add("hover")
 }
 
-function clearGame() {
-  guessOne.value = null;
-  guessTwo.value = null;
-}
-
-function resetGame() {
-  minRange.value = null;
-  maxRange.value = null;
-  guessOne.value = null;
-  guessTwo.value = null;
-  nameOne.value = null;
-  nameTwo.value = null;
-}
-
 function submit() {
   challenger1Name.innerText = nameOne.value;
   challenger2Name.innerText = nameTwo.value;
   guess1Out.innerText = guessOne.value;
   guess2Out.innerText = guessTwo.value;
+  checkCorrectName1();
+  checkCorrectName2();
+  displayName1Err();
+  displayName2Err();
   displayGuessErr1();
   displayGuessErr2();
   isNotANumber();
@@ -119,14 +121,34 @@ function isNotANumber() {
   }
 }
 
+function checkCorrectName1() {
+  if (nameOne.value === ""){
+    challenger1Name.innerText = "?";
+    guess1Out.innerText = "?"
+    return;
+  }else{
+    compareNumbers1();
+  }
+}
+
+function checkCorrectName2() {
+  if (nameTwo.value === ""){
+    challenger2Name.innerText = "?";
+    guess2Out.innerText = "?";
+    return;
+  }else{
+    compareNumbers2();
+  }
+}
+
 function compareNumbers1() {
   if (parseInt(guessOne.value) < randomNum) { guessMessage1.innerText = "That's too low!"
-  } else if (parseInt(guessOne.value) > randomNum) {
-    guessMessage1.innerText = "That's too high!"
-  } else if (parseInt(guessOne.value) === randomNum) {
-    guessMessage1.innerText = "BOOM!"
-    appendWinnerCard();
-  }
+} else if (parseInt(guessOne.value) > randomNum) {
+  guessMessage1.innerText = "That's too high!"
+} else if (parseInt(guessOne.value) === randomNum) {
+  guessMessage1.innerText = "BOOM!"
+  appendWinnerCard();
+}
 }
 
 function compareNumbers2() {
@@ -153,19 +175,35 @@ function updateRangeInputs() {
 function displayGuessErr1() {
   if (parseInt(guessOne.value) < parseInt(minRange.value)) {
     errorMessage1.hidden = false;
-  } else if (
+    errorMessage1.innerText = "Error: Not in range!";
+  }else if (
     parseInt(guessOne.value) > parseInt(maxRange.value)) {
       errorMessage1.hidden = false;
-    } else (errorMessage1.hidden = true)
-}
-    
-function displayGuessErr2() {
-  if (parseInt(guessTwo.value) < parseInt(minRange.value)) {
-    errorMessage2.hidden = false;
-  } else if (
-    parseInt(guessTwo.value) > parseInt(maxRange.value)) {
-    errorMessage2.hidden = false
-  } else (errorMessage2.hidden = true)
+      errorMessage1.innerText = "Error: Not in range!";
+    }else if(guessOne.value === "") {
+      guess1Out.innerText = "?"
+      errorMessage1.hidden = false;
+      errorMessage1.innerText = "Please enter a number!";
+    }else{errorMessage1.hidden = true; 
+      compareNumbers1();
+    }
+  }
+  
+  function displayGuessErr2() {
+    if (parseInt(guessTwo.value) < parseInt(minRange.value)) {
+      errorMessage2.hidden = false;
+      errorMessage2.innerText = "Error: Not in range!";
+    }else if (
+      parseInt(guessTwo.value) > parseInt(maxRange.value)) {
+      errorMessage2.hidden = false;
+      errorMessage2.innerText = "Error: Not in range!";
+    } else if(guessTwo.value === "") {
+      guess2Out.innerText = "?"
+      errorMessage2.hidden = false;
+      errorMessage2.innerText = "Please enter a number!";
+    } else {errorMessage2.hidden = true;
+      compareNumbers2();
+  }
 }
 
 function displayRange() {
@@ -185,14 +223,30 @@ function displayRangeErr() {
   }
 }
 
+function displayName1Err() {
+  if (nameOne.value === "") {
+    nameErr1.hidden = false;
+  } else {
+    nameErr1.hidden = true;
+  }
+}
+
+function displayName2Err() {
+  if (nameTwo.value === "") {
+    nameErr2.hidden = false;
+  } else {
+    nameErr2.hidden = true;
+  }
+}
+
 function appendWinnerCard() {
   if (guessMessage1.innerText === "BOOM!" || guessMessage2.innerText === "BOOM!") {
   winnerCardDisplay.insertAdjacentHTML(
     "afterbegin", `<article class="section__right--art1">
       <div class="art1__paragraphs">
-        <p class="art1__p--name1">CHALLENGER 1 NAME</p>
+        <p class="art1__p--name1">${nameOne.value}</p>
         <p class="art1__p--vs"> vs </p>
-        <p class="art1__p3--name2">CHALLENGER 2 NAME</p>
+        <p class="art1__p3--name2">${nameTwo.value}</p>
       </div>
       <h5 class="art1__h5--name">CHALLENGER NAME</h5>
       <h5 class="art1__h5--winner">WINNER</h5>
