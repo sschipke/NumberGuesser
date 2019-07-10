@@ -393,7 +393,7 @@ body {
 
 /****** Media queries *********/
 
-@media screen and (min-width:1200px) {
+@media screen and (min-width:1950px) {
 
   .main__left--section2 {
     height: 410px;

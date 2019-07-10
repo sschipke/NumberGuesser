@@ -38,9 +38,9 @@ resetBtn.addEventListener('click', resetGame);
 resetBtn.addEventListener('click', disableClearButton);
 resetBtn.addEventListener('click', getRandomNumber);
 submitGuess.addEventListener('click', submit);
-submitGuess.addEventListener('click', displayGuessErr1);
-submitGuess.addEventListener('click', displayGuessErr2);
-submitGuess.addEventListener('click', compareNumbers2);
+// submitGuess.addEventListener('click', displayGuessErr1);
+// submitGuess.addEventListener('click', displayGuessErr2);
+// submitGuess.addEventListener('click', compareNumbers2);
 upDateBtn.addEventListener('click', updateRangeInputs);
 
 /************Functions***************/
@@ -108,7 +108,7 @@ function submit() {
   displayName2Err();
   displayGuessErr1();
   displayGuessErr2();
-  isNotANumber();
+  // isNotANumber();
 }
 
 function isNotANumber() {
@@ -127,7 +127,6 @@ function checkCorrectName1() {
     guess1Out.innerText = "?"
     return;
   }else{
-    compareNumbers1();
   }
 }
 
@@ -137,28 +136,19 @@ function checkCorrectName2() {
     guess2Out.innerText = "?";
     return;
   }else{
-    compareNumbers2();
   }
 }
 
-function compareNumbers1() {
-  if (parseInt(guessOne.value) < randomNum) { guessMessage1.innerText = "That's too low!"
-} else if (parseInt(guessOne.value) > randomNum) {
-  guessMessage1.innerText = "That's too high!"
-} else if (parseInt(guessOne.value) === randomNum) {
-  guessMessage1.innerText = "BOOM!"
-  appendWinnerCard();
-}
-}
-
-function compareNumbers2() {
-  if (parseInt(guessTwo.value) < randomNum) {
-    guessMessage2.innerText = "That's too low!"
-  } else if (parseInt(guessTwo.value) > randomNum) {
-    guessMessage2.innerText = "That's too high!"
-  } else if (parseInt(guessTwo.value) === randomNum) {
-    guessMessage2.innerText = "BOOM!"
-    appendWinnerCard();  
+function compareNumbers(guess, help) {
+  var playerGuess = parseInt(guess.value);
+  var helpMessage = help;
+  if (playerGuess < randomNum) {
+  helpMessage.innerText = "That's too low!"
+  } else if (playerGuess > randomNum) {
+    helpMessage.innerText = "That's too high!"
+  } else if (playerGuess === randomNum) {
+    helpMessage.innerText = "BOOM!"
+    appendWinnerCard();
   }
 }
 
@@ -174,36 +164,54 @@ function updateRangeInputs() {
 
 function displayGuessErr1() {
   if (parseInt(guessOne.value) < parseInt(minRange.value)) {
-    errorMessage1.hidden = false;
-    errorMessage1.innerText = "Error: Not in range!";
-  }else if (
+    turnOnGuessRangeErr1();
+  } else if (
     parseInt(guessOne.value) > parseInt(maxRange.value)) {
-      errorMessage1.hidden = false;
-      errorMessage1.innerText = "Error: Not in range!";
-    }else if(guessOne.value === "") {
-      guess1Out.innerText = "?"
-      errorMessage1.hidden = false;
-      errorMessage1.innerText = "Please enter a number!";
-    }else{errorMessage1.hidden = true; 
-      compareNumbers1();
-    }
+    turnOnGuessRangeErr1();
+  } else if (guessOne.value === "") {
+    turnOnEmptyGuessErr1();
+  } else {
+  errorMessage1.hidden = true;
+  compareNumbers(guessOne, guessMessage1)
   }
+}
+
+function turnOnGuessRangeErr1() {
+  guess1Out.innerText = "X";
+  errorMessage1.hidden = false;
+  errorMessage1.innerText = "Error: Not in range!";
+}
+
+function turnOnEmptyGuessErr1() {
+  guess1Out.innerText = "?";
+  errorMessage1.hidden = false;
+  errorMessage1.innerText = "Please enter a number!";
+}
   
-  function displayGuessErr2() {
-    if (parseInt(guessTwo.value) < parseInt(minRange.value)) {
-      errorMessage2.hidden = false;
-      errorMessage2.innerText = "Error: Not in range!";
-    }else if (
-      parseInt(guessTwo.value) > parseInt(maxRange.value)) {
-      errorMessage2.hidden = false;
-      errorMessage2.innerText = "Error: Not in range!";
-    } else if(guessTwo.value === "") {
-      guess2Out.innerText = "?"
-      errorMessage2.hidden = false;
-      errorMessage2.innerText = "Please enter a number!";
-    } else {errorMessage2.hidden = true;
-      compareNumbers2();
+function displayGuessErr2() {
+  if (parseInt(guessTwo.value) < parseInt(minRange.value)) {
+    turnOnGuessRangeErr2();
+  } else if (
+    parseInt(guessTwo.value) > parseInt(maxRange.value)) {
+    turnOnGuessRangeErr2();
+  } else if (guessTwo.value === "") {
+    turnOnEmptyGuessErr2();
+  } else {
+  errorMessage2.hidden = true;
+  compareNumbers(guessTwo,guessMessage2)
   }
+}
+
+function turnOnGuessRangeErr2() {
+  guess2Out.innerText = "X";
+  errorMessage2.hidden = false;
+  errorMessage2.innerText = "Error: Not in range!";
+}
+
+function turnOnEmptyGuessErr2() {
+  guess2Out.innerText = "?"
+  errorMessage2.hidden = false;
+  errorMessage2.innerText = "Please enter a number!";
 }
 
 function displayRange() {
