@@ -7,7 +7,7 @@ Number Guesser is a game....
 
 This site was built using HTML, CSS, and vanilla JavaScript.
 
-##Wins
+## Wins
 
 Some wins during this project included refactoring two long, complex functions into one more dynamic function as well as refactoring one very large function into three smaller, better executed function.
 
