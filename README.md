@@ -1,7 +1,7 @@
 # NumberGuesser
 ## Overview
 
-Number Guesser is a game where two players guess a randomly generated number
+Number Guesser is a game of chance where two players guess a randomly generated number. If they'd like to add to the difficulty.
 
 ## Technical
 
@@ -10,6 +10,8 @@ This site was built using HTML, CSS, and vanilla JavaScript.
 ## Wins
 
 Some wins during this project included refactoring two long, complex functions into one more dynamic function as well as refactoring one very large function into three smaller, better executed function.
+
+## Struggles
 
 
 ![static comp](images/Static_Comp.png)
