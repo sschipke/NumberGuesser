@@ -20,4 +20,4 @@ Some wins during this project included refactoring two long, complex functions i
 Here is our website:
 ![firs image](images/Ours-Top.png)
 ![second image](images/Ours-Bottom.png)
-![third image](images/Ours-Card.ong)
+![third image](images/Ours-Card.png)
