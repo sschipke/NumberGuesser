@@ -393,7 +393,7 @@ body {
 
 /****** Media queries *********/
 
-@media screen and (min-width:1950px) {
+@media screen and (max-width:1895px) {
 
   .main__left--section2 {
     height: 410px;
@@ -503,7 +503,145 @@ body {
 
 }
 
-@media screen and (max-width:321px){
+@media screen and (max-width:1450px) {
+
+  .header__h1 {
+    font-size: 3.9em;
+    text-align: center;
+  }
+
+  .header__h2 {
+    bottom: 52px;
+    font-size: 2.0em;
+  }
+
+  .section1__input--min,
+  .section1__input--max {
+    border-color:#D0D2D3;
+    width: 100px;
+  }
+
+  .section1__left--btn {
+  background-color: #6E6E6E;
+  border-radius: 50px;
+  font-size: 1em;
+  font-weight: 700;
+  height: 35px;
+  margin-left: 15px;
+  outline: none;
+  width: 120px;
+  }
+
+  .main__left--section2 {
+    height: 350px;
+  }
+
+  .section2__p {
+    font-size: .6em;
+  }
+
+  .section2__h2 {
+    font-size: .6em;
+  }
+
+  .section2__name1--label,
+  .section2__name2--label {
+    font-size: 1.1em;
+  }
+
+  .section2__name1--input, 
+  .section2__name2--input {
+    height: 25px;
+    width: 150px;
+  }
+  
+  .section2__guess1--input,
+  .section2__guess2--input {
+    height: 25px;
+    width: 100px;
+  }
+
+  .section2__guess1--label,
+  .section2__guess2--label {
+    font-size: 1.1em;
+  }
+
+  .section2__btns {
+    font-size: .6em;
+    margin: 25px 5px 0px 5px;
+    width: 120px;
+  }
+
+  .main__left--section3 {
+    height: 300px;
+  }
+
+  .section3__h3 {
+    font-size: 1.2em;
+  }
+
+  .article1__h4,
+  .article2__h4 {
+    font-size: 1.0em;
+  }
+
+  .article1__p1,
+  .article1__p2 {
+    font-size: 1.0em;
+  }
+
+  .article2__p1,
+  .article2__p2 {
+    font-size: 1.0em;
+  }
+
+  .article1__out,
+  .article2__out {
+    font-size: 5.0em;
+  }
+
+  .section__right--art1 {
+    height: 200px;
+  }
+
+  .art1__p--name1,
+  .art1__p3--name2 {
+    font-size: 1.0em;
+  }
+
+  .art1__p--vs {
+    font-size: 1.0em;
+  }
+
+  .art1__h5--name {
+    font-size: 1.6em;
+  }
+
+  .art1__h5--winner {
+    font-size: 1.2em;
+  }
+
+  .art1__displyinfo {
+    margin: 11px 35px 0 40px;
+  }
+  
+  .art1__minTime {
+    font-size: .8em;
+  }
+
+  .art1__guessNumber {
+    font-size: .8em;
+  }
+
+  .art1__deletebtn {
+    font-size: .6em;
+    height: 20px;
+    width: 20px;
+  }
+
+}
+
+@media screen and (max-width:420px){
 
   .body__main {
     display: inline-block;

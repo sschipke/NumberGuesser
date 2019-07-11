@@ -23,9 +23,11 @@ var rangeErrorMin = document.querySelector('.error__minRange');
 var winnerCardDisplay = document.querySelector('.main__right');
 var nameErr1 = document.querySelector('.section2__name1--err1');
 var nameErr2 = document.querySelector('.section2__name2--err2');
+var guessCounter = 0;
 var randomNum = null;
 getRandomNumber();
 disableClearButton();
+disableResetButton();
 
 /**********Event Listeners*************/
 
@@ -34,13 +36,9 @@ guessTwo.addEventListener('keyup',disableClearButton);
 nameOne.addEventListener('keyup',disableClearButton);
 clearBtn.addEventListener('click', clearGame);
 clearBtn.addEventListener('click', disableClearButton);
-resetBtn.addEventListener('click', resetGame);
 resetBtn.addEventListener('click', disableClearButton);
-resetBtn.addEventListener('click', getRandomNumber);
+resetBtn.addEventListener('click', resetHandler);
 submitGuess.addEventListener('click', submit);
-// submitGuess.addEventListener('click', displayGuessErr1);
-// submitGuess.addEventListener('click', displayGuessErr2);
-// submitGuess.addEventListener('click', compareNumbers2);
 upDateBtn.addEventListener('click', updateRangeInputs);
 
 /************Functions***************/
@@ -57,8 +55,7 @@ function disableClearButton() {
     clearBtn.disabled = true;
     clearBtn.classList.remove("hover");
     clearBtn.classList.add("disabled");
-    disableResetButton();
-    } else { enableClearButton(), enableResetButton()}
+    }else{enableClearButton()}
   };
   
  function clearGame() {
@@ -66,30 +63,44 @@ function disableClearButton() {
     guessTwo.value = null;
   }
   
- function resetGame() {
+ function resetHandler() {
     getRandomNumber();
+    guessCounter = 0;
+    disableResetButton();
+    resetInputs();
+    disableClearButton();
     console.log(randomNum)
-    minRange.value = null;
-    maxRange.value = null;
-    guessOne.value = null;
-    guessTwo.value = null;
-    nameOne.value = null;
-    nameTwo.value = null;
   }
 
+ function resetInputs() {
+  minRange.value = null;
+  maxRange.value = null;
+  guessOne.value = null;
+  guessTwo.value = null;
+  nameOne.value = null;
+  nameTwo.value = null;
+ } 
+
+function guessCount() {
+  guessCounter++
+}
+
 function enableClearButton() {
-clearBtn.disabled = false;
-clearBtn.classList.remove("disabled");
-clearBtn.classList.add("hover");
-enableResetButton();
+  clearBtn.disabled = false;
+  clearBtn.classList.remove("disabled");
+  clearBtn.classList.add("hover");
 }
 
 function disableResetButton() {
+  if (guessCounter > 0){
+    console.log(guessCounter)
+    enableResetButton();
+  }else{
     resetBtn.disabled = true;
     resetBtn.classList.add("disabled");
     resetBtn.classList.remove("hover")
+  }
 }
- 
 
 function enableResetButton() {
   resetBtn.disabled = false;
@@ -102,13 +113,14 @@ function submit() {
   challenger2Name.innerText = nameTwo.value;
   guess1Out.innerText = guessOne.value;
   guess2Out.innerText = guessTwo.value;
+  guessCount();
   checkCorrectName1();
   checkCorrectName2();
   displayName1Err();
   displayName2Err();
   displayGuessErr1();
   displayGuessErr2();
-  // isNotANumber();
+  disableResetButton();
 }
 
 function isNotANumber() {
@@ -259,7 +271,7 @@ function appendWinnerCard() {
       <h5 class="art1__h5--name">CHALLENGER NAME</h5>
       <h5 class="art1__h5--winner">WINNER</h5>
       <div class="art1__displyinfo">
-        <p class="art1__guessNumber"><span class="art1__spans"> X </span>GUESSES</p>
+        <p class="art1__guessNumber"><span class="art1__spans"> ${guessCounter} </span>GUESSES</p>
         <p class="art1__minTime"><span class="art1__spans"> X </span>MINUTES</p>
         <button class="art1__deletebtn">X</button>
       </div>
