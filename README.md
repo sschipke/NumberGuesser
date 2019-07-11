@@ -1,7 +1,7 @@
 # NumberGuesser
 ## Overview
 
-Number Guesser is a game....
+Number Guesser is a game where two players guess a randomly generated number
 
 ## Technical
 
