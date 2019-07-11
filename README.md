@@ -26,6 +26,7 @@ Here is our website:
 ![second image](images/Ours-Bottom.png)
 <br>
 This is our mobile layout. 
+<br>
 ![first mobile](images/Mobile1.png)
 ![second mobile](images/Mobile2.png)
 ![third mobile](images/Mobile3.png)
