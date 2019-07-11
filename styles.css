@@ -3,13 +3,15 @@
   font-family:'Open Sans',sans-serif;
   margin: 0;
 }
+
 body {
   padding: 0;
   margin: 0;
 }
+
 .body__main {
   display: flex;
-  }
+}
 
 /****** Header ******/
 
@@ -22,6 +24,7 @@ body {
   justify-content: space-around;
   width: 100%;
 }
+
 .header__h1 {
   border-bottom: solid 1px white;
   color: #DD1972;
@@ -254,7 +257,7 @@ body {
 }
 
 .section3__article1 {
-  border-right: #404041 2px solid;
+  border-right:#D0D2D3 2px solid;
   display: inline-block;
   height: 50%;
   text-align: center;
@@ -376,6 +379,7 @@ body {
   font-size: 1em;
   font-weight: 400;
   height: 30px;
+  outline: none;
   width: 32px;
 }
 
@@ -452,11 +456,11 @@ body {
 
   .article1__p1,
   .article2__p1 {
-    font-size: 1.2em;
-  }
+  font-size: 1.3em;
+}
 
-  .article2__p1,
-  .article2__p2 {
+.article1__p2,
+.article2__p2 {
     font-size: 1.5em;
   }
 
@@ -494,6 +498,7 @@ body {
   }
 
   .art1__deletebtn {
+
     font-size: .8em;
     height: 27px;
     width: 27px;
@@ -501,7 +506,7 @@ body {
 
 }
 
-@media screen and (max-width:1450px) {
+@media screen and (max-width:1250px) {
 
   .header__h1 {
     font-size: 3.9em;
@@ -584,13 +589,10 @@ body {
   }
 
   .article1__p1,
-  .article1__p2 {
-    font-size: 1.0em;
-  }
-
+  .article1__p2, 
   .article2__p1,
   .article2__p2 {
-    font-size: 1.0em;
+    font-size: 20px;
   }
 
   .article1__out,
