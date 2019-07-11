@@ -18,19 +18,12 @@ Some wins during this project included refactoring two long, complex functions i
 ![mobile comp2](images/Mobile_Comp2.png)
 <br>
 Here is our website:
-![firs image](images/Ours-Top.png)
+![first image](images/Ours-Top.png)
 ![second image](images/Ours-Bottom.png)
-<<<<<<< HEAD
-![third image](images/Ours-Card.ong)
-=======
-![third image](images/Ours-Card.png)
->>>>>>> 926b6017c78a0a4a24ae378cd64552aa5d06902e
 <br>
 This is our mobile layout. 
 ![first mobile](images/Mobile1.png)
 ![second mobile](images/Mobile2.png)
-<<<<<<< HEAD
 ![third mobile](images/Mobile3.png)
-=======
-![third mobile](images/Mobile3.png)
->>>>>>> 926b6017c78a0a4a24ae378cd64552aa5d06902e
+
+
