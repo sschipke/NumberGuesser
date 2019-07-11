@@ -23,6 +23,8 @@ var rangeErrorMin = document.querySelector('.error__minRange');
 var winnerCardDisplay = document.querySelector('.main__right');
 var nameErr1 = document.querySelector('.section2__name1--err1');
 var nameErr2 = document.querySelector('.section2__name2--err2');
+var mainRight = document.querySelector('.main__right');
+var winner = ""
 var guessCounter = 0;
 var randomNum = null;
 getRandomNumber();
@@ -56,30 +58,42 @@ function disableClearButton() {
     clearBtn.classList.remove("hover");
     clearBtn.classList.add("disabled");
     }else{enableClearButton()}
-  };
+};
   
- function clearGame() {
-    guessOne.value = null;
-    guessTwo.value = null;
-  }
+function clearGame() {
+  guessOne.value = null;
+  guessTwo.value = null;
+}
   
- function resetHandler() {
-    getRandomNumber();
-    guessCounter = 0;
-    disableResetButton();
-    resetInputs();
-    disableClearButton();
-    console.log(randomNum)
+function resetHandler() {
+  getRandomNumber();
+  guessCounter = 0;
+  disableResetButton();
+  resetInputs();
+  disableClearButton();
+  console.log(randomNum)
   }
 
- function resetInputs() {
+function resetInputs() {
   minRange.value = null;
   maxRange.value = null;
   guessOne.value = null;
   guessTwo.value = null;
   nameOne.value = null;
   nameTwo.value = null;
- } 
+  resetOutputs();
+} 
+
+function resetOutputs() {
+  guess1Out.innerText = "#";
+  guess2Out.innerText = "#";
+  challenger1Name.innerText = "Challenger 1 Name";
+  challenger2Name.innerText = "Challenger 2 Name";
+  guessMessage1.innerText = "Let's Play Again!";
+  guessMessage2.innerText = "Let's Play Again!";
+  span1.innerText = "1";
+  span2.innerText = "100";
+}
 
 function guessCount() {
   guessCounter++
@@ -123,22 +137,11 @@ function submit() {
   disableResetButton();
 }
 
-function isNotANumber() {
-  if (guessOne.value === 'e') {
-    console.log(guessOne.value)
-    errorMessage1.innerText = "Error: Not a number!";
-    errorMessage1.hidden = false;
-  } else {
-    errorMessage1.hidden = true;
-  }
-}
-
 function checkCorrectName1() {
   if (nameOne.value === ""){
     challenger1Name.innerText = "?";
     guess1Out.innerText = "?"
     return;
-  }else{
   }
 }
 
@@ -160,6 +163,7 @@ function compareNumbers(guess, help) {
     helpMessage.innerText = "That's too high!"
   } else if (playerGuess === randomNum) {
     helpMessage.innerText = "BOOM!"
+    winnerName();
     appendWinnerCard();
   }
 }
@@ -268,7 +272,7 @@ function appendWinnerCard() {
         <p class="art1__p--vs"> vs </p>
         <p class="art1__p3--name2">${nameTwo.value}</p>
       </div>
-      <h5 class="art1__h5--name">CHALLENGER NAME</h5>
+      <h5 class="art1__h5--name">${winner}</h5>
       <h5 class="art1__h5--winner">WINNER</h5>
       <div class="art1__displyinfo">
         <p class="art1__guessNumber"><span class="art1__spans"> ${guessCounter} </span>GUESSES</p>
@@ -278,3 +282,18 @@ function appendWinnerCard() {
     </article>`);
   }
 }
+
+function winnerName() {
+  if (parseInt(guessOne.value) === randomNum){
+    winner = nameOne.value;
+  }else{
+    winner = nameTwo.value;
+  }
+}
+
+mainRight.addEventListener('click', function(event) { 
+  var articleRight = document.querySelector('.section__right--art1') 
+  if(event.target.className === 'art1__deletebtn') { 
+    articleRight.remove(); 
+  };
+});
