@@ -123,6 +123,10 @@ body {
   background-color: #DD1972;
 }
 
+.border {
+  border: solid 2px #DD1972;
+}
+
 /******* Main Left Section 2 *******/
 
 .main__left--section2 {
@@ -381,6 +385,10 @@ body {
   height: 30px;
   outline: none;
   width: 32px;
+}
+
+.art1__deletebtn:hover {
+  background-color: #DD1972;
 }
 
 .art1__displyinfo {

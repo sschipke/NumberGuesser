@@ -70,6 +70,8 @@ function resetHandler() {
   guessCounter = 0;
   disableResetButton();
   resetInputs();
+  removeBorders();
+  hideErrorMessages();
   disableClearButton();
   console.log(randomNum)
   }
@@ -188,6 +190,7 @@ function displayGuessErr1() {
     turnOnEmptyGuessErr1();
   } else {
   errorMessage1.hidden = true;
+  guessOne.classList.remove('border');
   compareNumbers(guessOne, guessMessage1)
   }
 }
@@ -196,12 +199,14 @@ function turnOnGuessRangeErr1() {
   guess1Out.innerText = "X";
   errorMessage1.hidden = false;
   errorMessage1.innerText = "Error: Not in range!";
+  guessOne.classList.add('border');
 }
 
 function turnOnEmptyGuessErr1() {
   guess1Out.innerText = "?";
   errorMessage1.hidden = false;
   errorMessage1.innerText = "Please enter a number!";
+  guessOne.classList.add('border');
 }
   
 function displayGuessErr2() {
@@ -215,6 +220,7 @@ function displayGuessErr2() {
   } else {
   errorMessage2.hidden = true;
   compareNumbers(guessTwo,guessMessage2)
+  guessTwo.classList.remove('border');
   }
 }
 
@@ -222,12 +228,14 @@ function turnOnGuessRangeErr2() {
   guess2Out.innerText = "X";
   errorMessage2.hidden = false;
   errorMessage2.innerText = "Error: Not in range!";
+  guessTwo.classList.add('border');
 }
 
 function turnOnEmptyGuessErr2() {
   guess2Out.innerText = "?"
   errorMessage2.hidden = false;
   errorMessage2.innerText = "Please enter a number!";
+  guessTwo.classList.add('border');
 }
 
 function displayRange() {
@@ -239,28 +247,55 @@ function displayRangeErr() {
   if (parseInt(minRange.value) > parseInt(maxRange.value)) {
     rangeErrorMin.hidden = false;
     rangeErrorMin.innerText = "Invalid Range!"
+    minRange.classList.add('border');
+    maxRange.classList.add('border');
   } else if (minRange.value === "" || maxRange.value === "") {
     rangeErrorMin.innerText = "Please enter two values!"
     rangeErrorMin.hidden = false;
+    minRange.classList.add('border');
+    maxRange.classList.add('border');
   } else {
     rangeErrorMin.hidden = true; 
+    minRange.classList.remove('border');
+    maxRange.classList.remove('border');
   }
 }
 
 function displayName1Err() {
   if (nameOne.value === "") {
     nameErr1.hidden = false;
+    nameOne.classList.add('border');
   } else {
     nameErr1.hidden = true;
+    nameOne.classList.remove('border');
   }
 }
 
 function displayName2Err() {
   if (nameTwo.value === "") {
     nameErr2.hidden = false;
+    nameTwo.classList.add('border');
   } else {
     nameErr2.hidden = true;
+    nameTwo.classList.remove('border');
   }
+}
+
+function removeBorders() {
+  guessOne.classList.remove('border');
+  guessTwo.classList.remove('border');  
+  nameOne.classList.remove('border');
+  nameTwo.classList.remove('border');
+  minRange.classList.remove('border');
+  maxRange.classList.remove('border');
+}
+
+function hideErrorMessages() {
+  errorMessage1.hidden = true;
+  errorMessage2.hidden = true;
+  nameErr1.hidden = true;
+  nameErr2.hidden = true;
+  rangeErrorMin.hidden = true;
 }
 
 function appendWinnerCard() {
