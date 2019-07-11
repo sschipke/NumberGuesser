@@ -21,3 +21,8 @@ Here is our website:
 ![firs image](images/Ours-Top.png)
 ![second image](images/Ours-Bottom.png)
 ![third image](images/Ours-Card.ong)
+<br>
+This is our mobile layout. 
+![first mobile](images/Mobile1.png)
+![second mobile](images/Mobile2.png)
+![third mobile](images/Mobile3.png)
