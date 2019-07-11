@@ -1,6 +1,4 @@
-*,
-*:after,
-*:before {
+* {
   box-sizing: border-box;
   font-family:'Open Sans',sans-serif;
   margin: 0;
@@ -663,13 +661,14 @@ body {
   }
 
   .main__left {
-    height: 1585px;
+    height: 100%;
     margin-right: 10px;
+    padding-top: 10px;
     width: 320px;
   }
 
   .main__left--section1 {
-    height: 295px;
+    height: 18%;
     margin: 0 10px;
     width:95%;
   }
@@ -682,6 +681,7 @@ body {
   .section1__input--min,
   .section1__input--max {
     border-color:#D0D2D3;
+    height: 30px;
     width: 270px;
   }
 
@@ -691,7 +691,7 @@ body {
   }
 
   .main__left--section2 {
-    height: 660px;
+    height: 40%;
     margin: 10px 110px 0 10px;
     width: 305px;
   }
@@ -726,11 +726,17 @@ body {
 
   .section2__btns {
     margin: 5px 10px;
+    font-size: 1.2em;
     width: 270px;
   }
 
+  .section2__name1--err1,
+  .section2__name2--err2 {
+    left: 30%;
+  }
+
   .main__left--section3 {
-    height: 580px;
+    height: 28%;
     margin: 10px;
   }
 
@@ -741,9 +747,70 @@ body {
     width: 100%;
   }
 
+  .article1__h4 {
+    margin-top: 5px;
+    width: 280px;
+  }
+
   .section3__article2{
   display: block;
   width: 100%;
   }
 
+  .main__right {
+  height: 100%;
+  margin: -9px;
+  padding-top: 10px;
+  width: 100%;
+}
+  }
+    .section__right--art1 {
+    margin: 0 0px 0 22px;
+    height: 100%;
+  }
+
+  .art1__paragraphs {
+    display: block;
+    margin: 0 10px;
+    text-align: center;
+  }
+  .art1__p--name1,
+  .art1__p3--name2 {
+    font-size: 1em;
+    margin: auto;
+  }
+
+  .art1__p--vs {
+    font-size: 0.7em;
+  }
+
+  .art1__h5--name {
+    font-size: 1.7em;
+    margin: 5px;
+  }
+
+  .art1__h5--winner {
+    font-size: 1.5em;
+  }
+
+  .art1__displyinfo {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 10px 0 10px;
+  
+  .art1__minTime {
+    font-size: 0.8em;
+  }
+
+  .art1__guessNumber {
+    font-size: 0.8em;
+  }
+
+  .art1__deletebtn {
+    font-size: 0.5em;
+    height: 20px;
+    width: 22px;
+  }
+
+  
 }
